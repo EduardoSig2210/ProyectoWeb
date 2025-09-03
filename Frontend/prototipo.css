@@ -1,0 +1,51 @@
+elements.style{
+    padding: 0px;
+}
+body{
+    background-color: #fdf6e3;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    
+}
+
+header{
+    background-color: #800600;
+    color: white;
+   
+    text-align: center;
+}
+
+.site-header-content{
+    width: 100%;
+    display: flex;
+    min-height: 70px;
+    background-color: #800600;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-input{
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: darkgrey;
+    border-color: #800600;
+}
+
+.site-shop{
+    margin-right: 25px;
+}
+
+.site-logo{
+    margin: 25px;
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+    background: #fdf6e3;
+}
