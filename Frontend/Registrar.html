@@ -20,14 +20,30 @@
             <h1 class="titulo">Inicio de seccion</h1>
             <div class="card" style="width: 18rem;">                    
                 <div class="card-body">
-
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apellido">
+                    </div>
                     <div class="mb-3">
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo">
                     </div>
-                    <br>
                     <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Contraseña">
+                    <br>
+                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Confirmar contraseña">
                     <div id="passwordHelpBlock" class="form-text">
                         Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                    </div>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Acepto los terminos y condiciones
+                        </label>
+                        <!--<div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>-->
                     </div>
                     <br>
                     <div>
