@@ -32,6 +32,10 @@ body{
     width: 400px;
 }
 
+.form-control{
+    margin-bottom: 20px;
+}
+
 .site-content{
     background-color: #fff8d180;
     width: 100%;
