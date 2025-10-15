@@ -14,6 +14,8 @@ function checkPassword() {
     validator2.textContent = "No puede dejar espacios vacios";
   }  else if (!checkboxInitial.checked){ validator2.textContent = "Debe aceptar los terminos y condiciones"} 
     else {    
+    localStorage.setItem("name", name.value);
+    localStorage.setItem("lastName", lastName.value);
     localStorage.setItem("email", emailAsigned.value);
     localStorage.setItem("password", passwordAsigned1.value);
     window.location.href = "Inicio.html";
@@ -35,11 +37,9 @@ function login() {
   }
 }
 
-function showHeader() {
-  let savedUser = localStorage.getItem("user");
-  const titulo = document.getElementById("titulo_inicial");
-
-  if (titulo) {
-    titulo.textContent = "BIENVENIDO " + savedUser;
-  }
-}
+let user = {
+    name: localStorage.getItem("name"),
+    lastName: localStorage.getItem("lastName"),
+    email: localStorage.getItem("email"),
+    password: localStorage.getItem("password")
+};
