@@ -1,0 +1,143 @@
+:root {
+  --espresso: #5e3417;
+  --citrine-white: #f9edd2;
+  --temptress: #440200;
+  --wine-berry: #7a2b36; /* rojo vino más claro */
+  --potters-clay: #8c623b;
+}
+
+/* Fondo general con degradado animado */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--citrine-white);
+  margin: 0;
+  padding-top: 90px;
+  background: linear-gradient(160deg, var(--temptress) 10%, var(--potters-clay) 40%, var(--espresso) 80%);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* Animación del fondo */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(122, 43, 54, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+/* Logo con animación */
+.logo {
+  width: 70px;
+  height: auto;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+  animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--citrine-white);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 30px;
+  padding: 5px 10px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  color: var(--citrine-white);
+  padding: 8px;
+  outline: none;
+  width: 250px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+  box-shadow: 0 0 10px rgba(250, 237, 210, 0.6);
+  border-radius: 30px;
+}
+
+.search-bar button {
+  background: var(--wine-berry);
+  border: none;
+  border-radius: 50%;
+  padding: 8px 10px;
+  color: var(--citrine-white);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+  background: var(--potters-clay);
+}
+
+/* Categorías */
+.categories {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.categories h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.category-list button {
+  background: var(--wine-berry);
+  border: none;
+  color: var(--citrine-white);
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-list button:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: var(--potters-clay);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Footer moderno */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(122, 43, 54, 0.8);
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.4);
+  font-size: 0.9rem;
+}
+
+
