@@ -1,0 +1,17 @@
+CREATE DATABASE DBFoodin_line;
+USE DBFoodin_line;
+
+CREATE TABLE users(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    lastName varchar(50),
+    email VARCHAR(40),
+    password VARCHAR(10)
+);
+
+select * from users;
+
+drop table users; -- por si acaso xd
+
+SHOW TABLES; -- para ver todas las tablas
+DESCRIBE users; -- para ver sus columnas
