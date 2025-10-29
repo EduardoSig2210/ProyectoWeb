@@ -2,9 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodi'n Line - Registrar</title>
     <link rel="icon" href="img\MotoAzulLogo.png" type="image/png">
     <link rel="stylesheet" href="Registrar.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -12,41 +20,66 @@
 
 </head>
 <body>
-    <div class="site-content">
-        <div class="logo-div">
-            <img class="site-logo" src="img/MotoAzulLogo.png" alt="logo" decoding="async">
-        </div>
-        <div class="form-div">
-            <h1 class="titulo">Inicio de sesion</h1>
-            <div class="card" style="width: 18rem;">                    
-                <div class="card-body">
-                    <div>
-                        <input type="text" class="form-control" id="User-name" aria-describedby="emailHelp" placeholder="Nombre" required/>
-                        <input type="text" class="form-control" id="User-lastname" aria-describedby="emailHelp" placeholder="Apellido" required/>
-                        <input type="email" class="form-control" id="User-email" aria-describedby="emailHelp" placeholder="Correo" required/>
-                        <input type="password" class="form-control" id="User-password" aria-describedby="passwordHelpBlock" placeholder="Contraseña" required/>
-                        <input type="password" class="form-control" id="Password-confirmation"  aria-describedby="passwordHelpBlock" placeholder="Confirmar contraseña" required/>
-                    </div>
-                    <div id="passwordHelpBlock" class="form-text">
-                        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
-                    </div>
-                    <br>
-                    <div class="form-check">
-                        <input class="form-check-input" id="checkboxInitial" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">
-                            Acepto los terminos y condiciones
-                        </label>
-                    </div>
-                    <br>
-                    <div>
-                    <label id="validator2"></label>
-                    <button type="submit" onclick="checkPassword()" class="btn btn-outline-info">Crear Sesion</button>
-                    </div>
-                </div>
-            </div>           
-        </div>
-    </div>
+    <div class="background-image"></div>
+    <div class="gradient-overlay"></div>
 
+    <main class="container d-flex flex-row justify-content-center align-items-center">
+        <!--Logo a la izquierda-->
+        <div class="logo-section me-5 text-center">
+            <img class="site-logo" src="img/MotoAzulLogo.png" alt="Foodi'n Line">
+            <p class="tagline mt-3">Ordena, disfruta y comparte el sabor 🍝</p>
+        </div>
+        <!--Formulario de registro a la derecha-->
+        <div class="register-container">
+            <div class="register-box shadow-lg">
+                <div class="register-header">
+                    <h2><i class="bi bi-cup-hot"></i> Bienvenido</h2>
+                    <p>Registrate para empezar una nueva experiencia</p>
+                </div>
+                <div class="input-group mb-3">
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                <input type="text" class="form-control" id="User-name" aria-describedby="emailHelp" placeholder="Nombre" required/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                <input type="text" class="form-control" id="User-lastname" aria-describedby="emailHelp" placeholder="Apellido" required/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" id="emailInput" class="form-control" placeholder="Correo electrónico">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input type="password" id="passwordInput" class="form-control" placeholder="Contraseña">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input type="password" id="passwordInput" class="form-control" placeholder="Confirmar contraseña">
+            </div>
+            <div id="passwordHelpBlock" class="form-text">
+                Your password must be 8-20 characters long, <br> contain letters and numbers, and must not contain <br> spaces, special characters, or emoji.
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" id="checkboxInitial" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Acepto los terminos y condiciones
+                </label>
+            </div>
+            <button class="btn btn-gradient w-100 mb-3 fw-semibold" onclick="checkPassword()">
+                <i class="bi bi-box-arrow-in-right"></i> Registrar
+            </button>
+            <a href="Inicio.html" class="btn btn-outline-light w-100 fw-semibold mb-3">
+                <i class="bi bi-person-check-fill"></i> Iniciar Sesión
+            </a>
+            </div>
+            
+        </div>
+    </main>
     <script src="../BackEnd/Login/function.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
