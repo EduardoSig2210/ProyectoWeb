@@ -4,7 +4,6 @@ async function checkPassword() {
   let emailAsigned = document.getElementById("User-email");
   let passwordAsigned1 = document.getElementById("User-password");
   let passwordAsigned2 = document.getElementById("Password-confirmation");
-  let validator2 = document.getElementById("validator2");
   let checkboxInitial = document.getElementById("checkboxInitial");
 
   if (passwordAsigned1.value != passwordAsigned2.value) {
@@ -13,12 +12,12 @@ async function checkPassword() {
   }
 
   if (!name.value || !lastName.value || !emailAsigned.value || !passwordAsigned1.value) {
-    validator2.textContent = "No puede dejar espacios vacíos";
+    console.log("No puede dejar espacios vacíos");
     return;
   }
 
   if (!checkboxInitial.checked) {
-    validator2.textContent = "Debe aceptar los términos y condiciones";
+    console.log("Debe aceptar los términos y condiciones");
     return;
   }
 
@@ -53,17 +52,16 @@ async function checkPassword() {
     }, 1000);
 
   } catch (error) {
-    validator2.textContent = error.message;
+    console.log(error.message);
   }
 }
 
 async function login() {
-  let validator = document.getElementById("Validator");
   let emailLogin = document.getElementById("emailInput").value.trim();
   let passwordLogin = document.getElementById("passwordInput").value.trim();
 
   if (!emailLogin || !passwordLogin) {
-    validator.textContent = "Email y contraseña son requeridos";
+    console.log("Email y contraseña son requeridos");
     return;
   }
 
@@ -94,14 +92,14 @@ async function login() {
 
     console.log("usuario guardado", data.user);
 
-    validator.textContent = "Login exitoso!";
+    console.log("Login exitoso!");
 
     setTimeout(() => {
-      window.location.href = "prototipo.html";
+      window.location.href = "restaurantes.html";
     }, 1000);
 
   } catch (error) {
-    validator.textContent = error.message;
+    console.log(error.message);
   }
 }
 
