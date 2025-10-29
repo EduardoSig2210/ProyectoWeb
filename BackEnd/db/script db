@@ -9,9 +9,26 @@ CREATE TABLE users(
     password VARCHAR(10)
 );
 
+create table restaurant(
+    idRestaurant int primary key AUTO_INCREMENT,
+    name varchar(50),
+    section varchar(20),
+    phone int, --numero telefonico
+    adress varchar(50),
+    logo varchar(50)
+);
+
+create table menu(
+    idMenu int primary key AUTO_INCREMENT,
+    item varchar(30),
+    price decimal,
+    idRestaurant int,
+    foreign key(idRestaurant) references restaurant(idRestaurant)
+);
+
 select * from users;
 
-drop table users; -- por si acaso xd
+drop table users; -- por si acaso xd    
 
 SHOW TABLES; -- para ver todas las tablas
 DESCRIBE users; -- para ver sus columnas
