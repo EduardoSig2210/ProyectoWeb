@@ -2,12 +2,12 @@
   --espresso: #5e3417;
   --citrine-white: #f9edd2;
   --temptress: #440200;
-  --wine-berry: #7a2b36; 
-  --potters-clay: #8c623b;
+  --wine-berry: #7a2b36;
+  --potters-clay: #e04747;
   --test: #fdf6e3;
 }
 
-/* Fondo general con degradado animado */
+/* General */
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--citrine-white);
@@ -18,50 +18,33 @@ body {
   animation: gradientMove 15s ease infinite;
 }
 
-/* Animacion del fondo */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Header */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(122, 43, 54, 0.9);
-  backdrop-filter: blur(10px);
+  background: var(--wine-berry);
   padding: 15px 0;
   z-index: 10;
   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
-/* Logo con animacion */
 .logo {
-  width: 159px;
+  width: 160px;
   height: auto;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
-  animation: bounce 3s ease-in-out infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.brand-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--citrine-white);
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
 /* Barra de busqueda */
 .search-bar {
   display: flex;
   align-items: center;
-  background: rgba(255,255,255,0.1);
+  background: transparent; 
   border-radius: 30px;
   padding: 5px 10px;
 }
@@ -73,12 +56,6 @@ body {
   padding: 8px;
   outline: none;
   width: 250px;
-  transition: box-shadow 0.3s ease;
-}
-
-.search-bar input:focus {
-  box-shadow: 0 0 10px rgba(255, 254, 252, 0.6);
-  border-radius: 30px;
 }
 
 .search-bar button {
@@ -95,19 +72,65 @@ body {
   background: var(--potters-clay);
 }
 
+/* Iconos usuario */
+.user-actions a {
+  color: var(--citrine-white);
+  margin-left: 15px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.user-actions a:hover {
+  transform: scale(1.2);
+  color: var(--potters-clay);
+}
+
+/* Menu lateral */
+.Menu_lateral {
+  width: 90px;
+  height: 650px;
+  background: var(--wine-berry);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+.icon {
+  width: 40px;
+  margin: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Zona principal */
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-area {
+  margin-left: 110px;
+  padding: 30px;
+}
+
 /* Categorias */
 .categories {
   text-align: center;
   margin-top: 30px;
-  justify-content: center;
-  
 }
 
 .categories h2 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 2rem;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
   color: var(--potters-clay);
 }
 
@@ -125,47 +148,82 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .category-list button:hover {
   transform: translateY(-4px) scale(1.05);
   background: var(--potters-clay);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Footer moderno */
+/* Restaurantes */
+.restaurants {
+  text-align: center;
+  margin-top: 30px; 
+  padding: 0; 
+  border-left: 5px solid var(--wine-berry); 
+  background: transparent; 
+}
+
+.restaurant-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.restaurant-card {
+  background: var(--citrine-white); 
+  color: var(--temptress);
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.03);
+}
+
+.restaurant-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.restaurant-card h3 {
+  color: var(--wine-berry);
+  font-weight: 700;
+}
+
+.restaurant-card p {
+  color: var(--espresso);
+  margin-bottom: 15px;
+}
+
+.restaurant-card button {
+  background: var(--wine-berry);
+  border: none;
+  color: var(--citrine-white);
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.restaurant-card button:hover {
+  background: var(--potters-clay);
+  transform: scale(1.05);
+}
+
+
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   background: rgba(122, 43, 54, 0.8);
-  box-shadow: 0 -3px 10px rgba(0,0,0,0.4);
   font-size: 0.9rem;
-}
-
-
-.Menu_lateral{
-  width: 90px;
-  height: 650px;
-  background:var(--wine-berry) 10%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
-  align-content: flex-start;
-  justify-content: center;
-}
-
-.main{
-  display: flex;
-  flex-direction: row;
-
-  
-}
-
-.icon{
-  width: 40px;
-  margin: 15px;
-  
 }
 
