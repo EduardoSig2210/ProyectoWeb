@@ -24,6 +24,7 @@ header{
     top: 0;
     right: 0;
     left: 0;
+    z-index: 1030;
     position: relative;
     flex-wrap: wrap;
     align-items: center;
@@ -43,7 +44,7 @@ header{
 
 .site-logo{
     margin: 25px;
-    width: 154px;
+    width: 64px;
     height: 64px;
     border-radius: 5px;
     background: #fdf6e3;

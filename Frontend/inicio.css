@@ -1,47 +1,165 @@
-element.style{
-    padding: 0px;
+:root {
+  /* Colores principales */
+  --espresso: #5e3417;
+  --citrine-white: #f9edd2;
+  --temptress: #440200;
+  --wine-berry: #5d222c;
+  --potters-clay: #8c623b;
 }
 
-body{
-    background-color: #fdf6e3;
-    font-family: Arial, Helvetica, sans-serif;    
-}
-.site-logo{
-    width: 300px;
-    justify-content: center;
-    margin-top:  200px;
-    background-color: #fdf6e3cb;
-    border-radius: 20px;
-    margin-bottom: 224px;
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow: hidden; /* Evita scroll si el contenido se sale */
 }
 
-.form-div{
-    margin-top: 190px;
-    margin-right: 75px;
-    margin-bottom: 250px;
+/* Fondo con degradado */
+.background-image {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #f7efe2 0%, #f4e6d7 50%, #d9b89c 100%);
+  filter: brightness(0.9);
+  z-index: -2;
 }
 
-.titulo{
-    color: #1f1d1d;
+/* Overlay con gradiente y opacidad */
+.gradient-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(160deg, var(--temptress) 15%, var(--potters-clay) 45%, var(--espresso) 85%);
+  opacity: 0.8;
+  z-index: -1;
 }
-.card-body{
-    background-color: #f1f2db;
-    border-color: #fffbe8;
 
+/* Contenedor principal en fila */
+main.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row; /* fila: logo a la izquierda, login a la derecha */
+  justify-content: center; /* centra horizontalmente la fila */
+  align-items: center;     /* centra verticalmente */
+  padding: 0 5%;           /* espacio lateral */
+  gap: 50px;               /* separación entre logo y login */
+  z-index: 1;
 }
 
+/* Sección del logo y eslogan */
+.logo-section {
+  text-align: center; /* centra todo dentro del div */
+}
 
-.site-content{
-    background-color: #fff8d180;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    min-height: 70px;
-    position: fixed;
-    position: relative;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content:space-around ;
-    padding: .5rem 1rem;
-    flex-flow: row nowrap;
+.site-logo {
+  width: 250px; /* tamaño grande del logo */
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+}
+
+/* Eslogan debajo del logo */
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-top: 12px; /* separación entre logo y eslogan */
+}
+
+/* Contenedor del login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Caja de login */
+.login-box {
+  background: rgba(255, 255, 255, 0.15); /* fondo semitransparente */
+  backdrop-filter: blur(12px); /* desenfoque del fondo detrás */
+  border-radius: 20px; /* bordes redondeados */
+  padding: 30px;
+  width: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* sombra */
+}
+
+/* Animación del logo */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Animación de flotación del login */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Encabezado del login */
+.login-header h2 {
+  color: var(--citrine-white);
+  font-weight: 700;
+}
+.login-header p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+}
+
+/* Inputs del login */
+.input-group-text {
+  background-color: var(--wine-berry);
+  color: var(--citrine-white);
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0 10px 10px 0;
+  padding: 10px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+
+/* Botones con gradiente */
+.btn-gradient {
+  background: linear-gradient(90deg, var(--wine-berry), var(--potters-clay));
+  border: none;
+  border-radius: 15px;
+  color: var(--citrine-white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 237, 210, 0.4);
+}
+
+/* Botones de borde claro */
+.btn-outline-light {
+  border: 2px solid var(--citrine-white);
+  border-radius: 15px;
+  color: var(--citrine-white);
+}
+.btn-outline-light:hover {
+  background-color: var(--citrine-white);
+  color: var(--temptress);
+  transform: translateY(-2px);
+}
+
+/* Enlaces */
+.link-light:hover {
+  color: var(--potters-clay);
+}
+
+/* Responsive para móviles */
+@media (max-width: 992px) {
+  main.container {
+    flex-direction: column; /* apilar logo y login */
+    padding: 5%;
+    gap: 30px;
+  }
+  .site-logo { width: 200px; }
+  .tagline { font-size: 1.1rem; }
+  .login-box { width: 90%; padding: 25px; }
 }
