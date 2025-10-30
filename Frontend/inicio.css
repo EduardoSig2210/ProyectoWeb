@@ -54,7 +54,6 @@ main.container {
 
 .site-logo {
   width: 250px; /* tamaño grande del logo */
-  animation: bounce 4s ease-in-out infinite; /* animación de rebote */
   filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
 }
 
@@ -81,7 +80,6 @@ main.container {
   width: 350px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* sombra */
-  animation: float 5s ease-in-out infinite; /* efecto flotante */
 }
 
 /* Animación del logo */
