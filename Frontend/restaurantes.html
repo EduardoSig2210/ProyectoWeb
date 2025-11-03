@@ -46,89 +46,108 @@
 
     <!-- Contenido -->
     <div class="content-area">
-<!-- Categorias -->
-<section class="categories">
-  <h2>Categorías</h2>
-  <div class="category-list">
-    <button>🔥Todo</button>
-    <button>🍔 Comida rápida</button>
-    <button>🥤 Bebidas</button>
-    <button>🍰 Postres</button>
-    <button>🥗 Saludable</button>
-  </div>
-</section>
+      <!-- Categorias -->
+      <section class="categories">
+        <h2>Categorías</h2>
+        <div class="category-list">
+          <button data-filter="all">🔥 Todo</button>
+          <button data-filter="comida-rapida">🍔 Comida rápida</button>
+          <button data-filter="bebidas">🥤 Bebidas</button>
+          <button data-filter="postres">🍰 Postres</button>
+          <button data-filter="saludable">🥗 Saludable</button>
+        </div>
+      </section>
 
-<!-- Restaurantes destacados -->
-<section class="restaurants">
-  <div class="restaurant-grid">
-
-    <!-- Tarjeta Papa John's -->
-    <div class="restaurant-card">
-      <img src="img/papa_johns.png" alt="Papa John's">
-      <h3>Papa John's</h3>
-      <p>Pizzas deliciosas, alitas y más...</p>
-      <button>Ver menú</button>
-    </div>
-    
-    <!-- Wendys -->
-    <div class="restaurant-card">
-      <img src="img/wendys.png" alt="Wendy's">
-      <h3>Wendy's</h3>
-      <p>Hamburguesas, papas fritas y refrescos.</p>
-      <button>Ver menú</button>
-    </div>
-
-    <!-- San Martin -->
-    <div class="restaurant-card">
-      <img src="img/san_martin.png" alt="San Martín">
-      <h3>San Martín</h3>
-      <p>Comida gourmet, carnes y ensaladas.</p>
-      <button>Ver menú</button>
-    </div>
-
-    <!-- Starbucks -->
-    <div class="restaurant-card">
-      <img src="img/starbucks.png" alt="Starbucks">
-      <h3>Starbucks</h3>
-      <p>Cafés, frappés y pasteles deliciosos.</p>
-      <button>Ver menú</button>
-    </div>
-
-    <!-- Go Green -->
-    <div class="restaurant-card">
-      <img src="img/go_green.png" alt="Go Green">
-      <h3>Go Green</h3>
-      <p>Opciones saludables, ensaladas y jugos.</p>
-      <button>Ver menú</button>
-    </div>
-
-    <!-- Ban Ban -->
-    <div class="restaurant-card">
-      <img src="img/ban_ban.png" alt="Ban Ban">
-      <h3>Ban Ban</h3>
-      <p>Comida rápida asiática y noodles.</p>
-      <button>Ver menú</button>
-    </div>
-    
-    <!-- Olive Garden -->
-    <div class="restaurant-card">
-     <img src="img/olive_garden.png" alt="Olive Grden">
-     <h3>Olive Garden</h3>
-     <p>Deliciosos platillos italianos,bebidas y más.</p>
-     <button>Ver menú</button>
-    </div>
-    <!-- Subway -->
-    <div class="restaurant-card">
-      <img src="img/subway.png" alt="Subway">
-      <h3>Subway</h3>
-      <p>Sandwiches frescos y wraps saludables.</p>
-      <button>Ver menú</button>
-    </div>
-  </div>
-</section>
+      <!-- Restaurantes destacados -->
+      <section class="restaurants">
+        <div class="restaurant-grid">
+          <!-- Papa John's -->
+          <div class="restaurant-card" data-category="comida-rapida">
+            <img src="img/papa_johns.png" alt="Papa John's">
+            <h3>Papa John's</h3>
+            <p>Pizzas deliciosas, alitas y más...</p>
+            <button>Ver menú</button>
+          </div>
+          <!-- Wendys -->
+          <div class="restaurant-card" data-category="comida-rapida">
+            <img src="img/wendys.png" alt="Wendy's">
+            <h3>Wendy's</h3>
+            <p>Hamburguesas, papas fritas y refrescos.</p>
+            <button>Ver menú</button>
+          </div>
+          <!-- San Martín -->
+          <div class="restaurant-card" data-category="postres">
+            <img src="img/san_martin.png" alt="San Martín">
+            <h3>San Martín</h3>
+            <p>Comida gourmet, carnes y ensaladas.</p>
+            <button>Ver menú</button>
+          </div>
+          <!-- Starbucks -->
+          <div class="restaurant-card" data-category="bebidas">
+            <img src="img/starbucks.png" alt="Starbucks">
+            <h3>Starbucks</h3>
+            <p>Cafés, frappés y pasteles deliciosos.</p>
+            <button>Ver menú</button>
+          </div>
+          <!-- Bobaluba -->
+          <div class="restaurant-card" data-category="bebidas">
+            <img src="img/bobaluba.png" alt="Bobaluba">
+            <h3>Bobaluba</h3>
+            <p>Deliciosas bebidas de taro, matcha y más</p>
+            <button>Ver menú</button>
+          </div>
+          <!-- Go Green -->
+          <div class="restaurant-card" data-category="saludable">
+            <img src="img/go_green.png" alt="Go Green">
+            <h3>Go Green</h3>
+            <p>Opciones saludables, ensaladas y jugos.</p>
+            <button>Ver menú</button>
+          </div>
+          <!-- Ban Ban -->
+          <div class="restaurant-card" data-category="postres">
+            <img src="img/ban_ban.png" alt="Ban Ban">
+            <h3>Ban Ban</h3>
+            <p>Comida rápida asiática y noodles.</p>
+            <button>Ver menú</button>
+          </div>
+          <!-- Olive Garden -->
+          <div class="restaurant-card" data-category="saludable">
+           <img src="img/olive_garden.png" alt="Olive Garden">
+           <h3>Olive Garden</h3>
+           <p>Deliciosos platillos italianos, bebidas y más.</p>
+           <button>Ver menú</button>
+          </div>
+          <!-- Subway -->
+          <div class="restaurant-card" data-category="saludable">
+            <img src="img/subway.png" alt="Subway">
+            <h3>Subway</h3>
+            <p>Sandwiches frescos y wraps saludables.</p>
+            <button>Ver menú</button>
+          </div>
         </div>
       </section>
     </div>
   </div>
+
+  <!-- Script para filtrar por categoría -->
+  <script>
+    const categoryButtons = document.querySelectorAll('.category-list button');
+    const restaurants = document.querySelectorAll('.restaurant-card');
+
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        restaurants.forEach(rest => {
+          const category = rest.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            rest.style.display = 'block';
+          } else {
+            rest.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
