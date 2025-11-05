@@ -45,12 +45,8 @@ async function checkPassword() {
     localStorage.setItem("name", data.name);
     localStorage.setItem("lastName", data.lastName || "");
     localStorage.setItem("email", data.email);
-
-    validator2.textContent = "Registro exitoso!";
-    setTimeout(() => {
-      window.location.href = "Inicio.html";
-    }, 1000);
-
+    
+    window.location.href = "Inicio.html";
   } catch (error) {
     console.log(error.message);
   }
