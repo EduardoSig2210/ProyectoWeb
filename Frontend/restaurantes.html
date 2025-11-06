@@ -19,33 +19,68 @@
   <link rel="stylesheet" href="restaurantes.css">
 </head>
 <body>
+
   <!-- Encabezado principal -->
   <header class="navbar">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo-section d-flex align-items-center">
         <img src="img/Logo_Header_Letras_Blancas.png" alt="Logo Foodi’n Line" class="logo">
       </div>
+
+      <!--  Buscador con ID -->
       <div class="search-bar">
-        <input type="text" placeholder="Buscar restaurantes o platos">
+        <input type="text" id="buscarRestaurante" placeholder="Buscar restaurantes o platos">
         <button><i class="bi bi-search"></i></button>
       </div>
-      <div class="user-actions d-flex align-items-center">
-        <a href="#"><i class="bi bi-bell-fill"></i></a>
-        <a href="#"><i class="bi bi-chat-dots-fill"></i></a>
-        <a href="#"><i class="bi bi-cart-fill"></i></a>
-        <a href="#"><i class="bi bi-person-circle"></i></a>
-      </div>
+
+   <div class="user-actions d-flex align-items-center">
+
+  <div class="action-item">
+    <i class="bi bi-bell-fill"></i>
+    <div class="dropdown-menu">
+      <p>Notificaciones</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <i class="bi bi-chat-dots-fill"></i>
+    <div class="dropdown-menu">
+      <p>Añadir comentario</p>
+      <p>Mensajes nuevos</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <i class="bi bi-cart-fill"></i>
+    <div class="dropdown-menu">
+      <p>Ver Carrito</p>
+      <p>Pedidos anteriores</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <i class="bi bi-person-circle"></i>
+    <div class="dropdown-menu">
+      <p>Mi Perfil</p>
+      <p>Configuración</p>
+      <p>Cerrar Sesión</p>
+    </div>
+  </div>
+
+</div>
+
     </div>
   </header>
 
   <!-- Contenedor principal -->
   <div class="main">
+
     <!-- Menu lateral -->
-    <aside class="Menu_lateral">
-    </aside>
+    <aside class="Menu_lateral"></aside>
 
     <!-- Contenido -->
     <div class="content-area">
+
       <!-- Categorias -->
       <section class="categories">
         <h2>Categorías</h2>
@@ -61,74 +96,134 @@
       <!-- Restaurantes destacados -->
       <section class="restaurants">
         <div class="restaurant-grid">
-          <!-- Papa John's -->
-          <div class="restaurant-card" data-category="comida-rapida">
+
+          <div class="restaurant-card" data-category="comida-rapida" id="papa_johns">
             <img src="img/papa_johns.png" alt="Papa John's">
             <h3>Papa John's</h3>
             <p>Pizzas deliciosas, alitas y más...</p>
             <button onclick="menuView()">Ver menú</button>
           </div>
-          <!-- Wendys -->
-          <div class="restaurant-card" data-category="comida-rapida">
+
+          <div class="restaurant-card" data-category="comida-rapida" id="Wendys">
             <img src="img/wendys.png" alt="Wendy's">
             <h3>Wendy's</h3>
             <p>Hamburguesas, papas fritas y refrescos.</p>
             <button onclick="menuView()">Ver menú</button>
           </div>
-          <!-- San Martín -->
-          <div class="restaurant-card" data-category="postres">
+
+          <div class="restaurant-card" data-category="postres" id="San_Martin">
             <img src="img/san_martin.png" alt="San Martín">
             <h3>San Martín</h3>
             <p>Comida gourmet, carnes y ensaladas.</p>
             <button onclick="menuView()">Ver menú</button>
           </div>
-          <!-- Starbucks -->
-          <div class="restaurant-card" data-category="bebidas">
+
+          <div class="restaurant-card" data-category="bebidas" id="Starbucks">
             <img src="img/starbucks.png" alt="Starbucks">
             <h3>Starbucks</h3>
             <p>Cafés, frappés y pasteles deliciosos.</p>
             <button onclick="menuView()">Ver menú</button>
           </div>
-          <!-- Bobaluba -->
-          <div class="restaurant-card" data-category="bebidas">
+
+          <div class="restaurant-card" data-category="bebidas" id="Bobaluba">
             <img src="img/bobaluba.png" alt="Bobaluba">
             <h3>Bobaluba</h3>
             <p>Deliciosas bebidas de taro, matcha y más</p>
             <button onclick="menuView()">Ver menú</button>
+
           </div>
-          <!-- Go Green -->
-          <div class="restaurant-card" data-category="saludable">
+
+          <div class="restaurant-card" data-category="saludable" id="Go_Green">
             <img src="img/go_green.png" alt="Go Green">
             <h3>Go Green</h3>
             <p>Opciones saludables, ensaladas y jugos.</p>
             <button onclick="menuView()">Ver menú</button>
           </div>
-          <!-- Ban Ban -->
-          <div class="restaurant-card" data-category="postres">
+
+          <div class="restaurant-card" data-category="postres" id="Ban_Ban">
             <img src="img/ban_ban.png" alt="Ban Ban">
             <h3>Ban Ban</h3>
             <p>Comida rápida asiática y noodles.</p>
             <button onclick="menuView()">Ver menú</button>
           </div>
-          <!-- Olive Garden -->
-          <div class="restaurant-card" data-category="saludable">
+
+          <div class="restaurant-card" data-category="saludable" id="Olive_Garden">
            <img src="img/olive_garden.png" alt="Olive Garden">
            <h3>Olive Garden</h3>
            <p>Deliciosos platillos italianos, bebidas y más.</p>
            <button onclick="menuView()">Ver menú</button>
+
           </div>
-          <!-- Subway -->
-          <div class="restaurant-card" data-category="saludable">
+
+          <div class="restaurant-card" data-category="saludable" id="Subway">
             <img src="img/subway.png" alt="Subway">
             <h3>Subway</h3>
             <p>Sandwiches frescos y wraps saludables.</p>
             <button onclick="menuView()">Ver menú</button>
+
           </div>
+
         </div>
       </section>
+
+      <!-- Mensaje de error -->
+   <p id="mensaje-no-encontrado" class="no-encontrado" style="display:none;">
+  Restaurante no encontrado 
+</p>
+
     </div>
   </div>
+
+
+  <!-- Script búsqueda -->
+  <script>
+    const inputBusqueda = document.getElementById("buscarRestaurante");
+    const tarjetas = document.querySelectorAll(".restaurant-card");
+    const mensaje = document.getElementById("mensaje-no-encontrado");
+
+    inputBusqueda.addEventListener("input", () => {
+      const texto = inputBusqueda.value.toLowerCase();
+      let coincidencias = 0;
+
+      tarjetas.forEach(card => {
+        const nombre = card.querySelector("h3").textContent.toLowerCase();
+        const descripcion = card.querySelector("p").textContent.toLowerCase();
+        const categoria = card.getAttribute("data-category").toLowerCase();
+
+        if (nombre.includes(texto) || descripcion.includes(texto) || categoria.includes(texto)) {
+          card.style.display = "block";
+          coincidencias++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      mensaje.style.display = coincidencias === 0 ? "block" : "none";
+    });
+  </script>
+<script>
+  const menuItems = document.querySelectorAll('.action-item');
+
+  menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const menu = item.querySelector('.dropdown-menu');
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  // Cerrar al hacer clic fuera
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".action-item")) {
+      document.querySelectorAll(".dropdown-menu").forEach(menu => {
+        menu.style.display = "none";
+      });
+    }
+  });
+</script>
+
   <!-- Script para validar la contraseña antes de enviar -->
   <script src="../BackEnd/MainMenu/matrixRestaurant.js"></script>
+
 </body>
 </html>
+
