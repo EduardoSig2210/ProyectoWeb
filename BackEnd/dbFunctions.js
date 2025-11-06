@@ -136,9 +136,10 @@ app.get('/api/usuarios', (req, res) => {
 
 // Iniciar servidor
 app.listen(PORT, () => {
-    console.log(`Servidor de login corriendo en http://localhost:${PORT}`);
-    console.log(`Endpoints disponibles:`);
-    console.log(`POST http://localhost:${PORT}/api/login`);
-    console.log(`POST http://localhost:${PORT}/api/usuarios`);
-    console.log(`GET  http://localhost:${PORT}/api/usuarios`);
+    console.log("Login html on: http://127.0.0.1:5500/Frontend/Inicio.html");
+    console.log(`Login server running on: http://localhost:${PORT}`);
+    //console.log(`Endpoints disponibles:`);
+    //console.log(`POST http://localhost:${PORT}/api/login`);
+    //console.log(`POST http://localhost:${PORT}/api/usuarios`);
+    //console.log(`GET  http://localhost:${PORT}/api/usuarios`);
 });
