@@ -19,5 +19,6 @@ function Filter(){
 }
 
 function menuView(){
+    let idRestaurant;
     window.location.href = "prototipo.html";
 }

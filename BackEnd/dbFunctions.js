@@ -134,6 +134,14 @@ app.get('/api/usuarios', (req, res) => {
     });
 });
 
+app.get('/api/restaurantes', (req, res) => {
+    connection.query('select * from restaurant', function(error, results) {
+        if(error){
+            return res.sa
+        }
+    })
+})
+
 // Iniciar servidor
 app.listen(PORT, () => {
     console.log("Login html on: http://127.0.0.1:5500/Frontend/Inicio.html");
