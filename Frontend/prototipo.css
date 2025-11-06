@@ -94,7 +94,7 @@ body {
 /* Menu lateral */
 .Menu_lateral {
   width: 90px;
-  height: 650px;
+  height: auto;
   background: var(--wine-berry);
   display: flex;
   flex-direction: row;
@@ -127,7 +127,6 @@ body {
   padding: 30px;
 }
 
-/* Categorias */
 
 /* Restaurantes */
 .menu {
@@ -214,3 +213,9 @@ footer {
   align-content: center;
   justify-content: center;
 }
+
+.logo_restaurant{
+  justify-content: center;
+  align-items: center;
+}
+
