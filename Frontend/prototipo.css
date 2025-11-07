@@ -137,9 +137,21 @@ body {
 
 .logo_restaurant {
   display: block;
-  margin: 0 auto;
-  width: 200px;
+  margin: 20px auto 40px auto;
+  width: 260px;      /* Más ancho */
+  height: 160px;     /* Más bajo → lo hace ovalado */
+  object-fit: cover; /* Mantiene proporción sin deformar */
+  border-radius: 50px; /* Bordes ovalados suaves */
+  border: 5px solid var(--wine-berry); 
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.logo_restaurant:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
 
 /* Restaurantes */
 .menu {
@@ -153,28 +165,36 @@ body {
 .menu-grid {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
+
+
 
 .menu-card {
   background: var(--citrine-white);
   color: var(--temptress);
   border-radius: 15px;
   padding: 20px;
-  width: auto;
+  width: 100%;
+  display: flex; /* ← antes no estaba */
+  align-items: center;
+  gap: 20px;     /* separación entre imagen y texto */
   box-shadow: 0 3px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
+
 
 .menu-card:hover {
   transform: scale(1.03);
 }
 
 .menu-card img {
-  width: 100%;
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 15px;
 }
+
 
 .menu-card h3 {
   color: var(--wine-berry);
@@ -268,5 +288,61 @@ body {
   background: var(--potters-clay);
 }
 
+/* ----- ABANICO MENU ----- */
+.fan-menu {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.main-icon {
+  color: var(--citrine-white);
+  font-size: 1.9rem;
+  transition: transform .3s ease;
+}
+
+.fan-menu:hover .main-icon {
+  transform: scale(1.15);
+}
+
+.fan-options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  pointer-events: none;
+}
+
+.fan-options a {
+  position: absolute;
+  color: var(--citrine-white);
+  font-size: 1.4rem;
+  opacity: 0;
+  transform: translate(0,0);
+  transition: transform .4s ease, opacity .3s ease;
+}
+
+/* Distribucion en abanico */
+.fan-menu:hover .fan-options a:nth-child(1) {
+  transform: translate(-50px, -10px);
+  opacity: 1;
+}
+
+.fan-menu:hover .fan-options a:nth-child(2) {
+  transform: translate(-35px, -45px);
+  opacity: 1;
+}
+
+.fan-menu:hover .fan-options a:nth-child(3) {
+  transform: translate(0px, -60px);
+  opacity: 1;
+}
+
+/* Permitir clic cuando está abierto */
+.fan-menu:hover .fan-options {
+  pointer-events: auto;
+}
 
 
