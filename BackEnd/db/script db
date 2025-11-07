@@ -26,6 +26,15 @@ create table menu(
     foreign key(idRestaurant) references restaurant(idRestaurant)
 );
 
+
+INSERT INTO restaurant (name, section, phone, adress, logo) VALUES
+('Papa Jhons', 'Comida rapida', 22733333, 'Col.La Sultana, Antiguo Cuscatlan', 'PapaJhons.png');
+
+INSERT INTO menu (item, price, idRestaurant) VALUES 
+('Pizza Carnivora', 17.99, 1),
+('Garlic Knots', 3.95, 1),
+('Hawaiana', 16.99, 1);
+
 select * from users;
 
 drop table users; -- por si acaso xd    
