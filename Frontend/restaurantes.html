@@ -211,56 +211,5 @@
         </p>
       </div>
     </div>
-
-    <!-- Script búsqueda -->
-    <script>
-      const inputBusqueda = document.getElementById("buscarRestaurante");
-      const tarjetas = document.querySelectorAll(".restaurant-card");
-      const mensaje = document.getElementById("mensaje-no-encontrado");
-
-      inputBusqueda.addEventListener("input", () => {
-        const texto = inputBusqueda.value.toLowerCase();
-        let coincidencias = 0;
-
-        tarjetas.forEach((card) => {
-          const nombre = card.querySelector("h3").textContent.toLowerCase();
-          const descripcion = card.querySelector("p").textContent.toLowerCase();
-          const categoria = card.getAttribute("data-category").toLowerCase();
-
-          if (
-            nombre.includes(texto) ||
-            descripcion.includes(texto) ||
-            categoria.includes(texto)
-          ) {
-            card.style.display = "block";
-            coincidencias++;
-          } else {
-            card.style.display = "none";
-          }
-        });
-
-        mensaje.style.display = coincidencias === 0 ? "block" : "none";
-      });
-    </script>
-    <script>
-      const menuItems = document.querySelectorAll(".action-item");
-
-      menuItems.forEach((item) => {
-        item.addEventListener("click", () => {
-          const menu = item.querySelector(".dropdown-menu");
-          menu.style.display =
-            menu.style.display === "block" ? "none" : "block";
-        });
-      });
-
-      // Cerrar al hacer clic fuera
-      document.addEventListener("click", (e) => {
-        if (!e.target.closest(".action-item")) {
-          document.querySelectorAll(".dropdown-menu").forEach((menu) => {
-            menu.style.display = "none";
-          });
-        }
-      });
-    </script>
   </body>
 </html>
