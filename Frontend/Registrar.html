@@ -1,101 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos basicos -->
-    <meta charset="UTF-8"> <!-- Codificacion de caracteres -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la pagina sea responsiva -->
-    <title>Foodi'n Line - Registrar</title> <!-- Titulo que aparece en la pestaña del navegador -->
-    
-    <!-- Icono de la página (favicon) -->
-    <link rel="icon" href="img/MotoAzulLogo.png" type="image/png">
-    
-    <!-- Estilos propios del registro -->
-    <link rel="stylesheet" href="Registrar.css">
-
-    <!-- Google Fonts fuente Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Iconos de Bootstrap -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurantes</title>
+    <link rel="stylesheet" href="restaurantes.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-    <!-- Bootstrap CSS y JS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <!-- Fondo decorativo principal con degradado -->
-    <div class="background-image"></div>
 
-    <!-- Capa de degradado encima del fondo para efecto visual -->
-    <div class="gradient-overlay"></div>
+<header>
+    <input id="searchInput" type="text" placeholder="Buscar restaurante...">
+    <div class="icons">
+        <i class="bi bi-bell"></i>
+        <i class="bi bi-chat-left-text"></i>
+        <i class="bi bi-person-circle"></i>
+    </div>
+</header>
 
-    <!-- Contenedor principal centrado vertical y horizontalmente -->
-    <main class="container d-flex justify-content-center align-items-center">
-        
-        <!-- Caja del registro: fondo translucido, sombra y bordes redondeados -->
-        <div class="register-box shadow-lg">
-            
-            <!-- Seccion del logo y eslogan -->
-            <div class="register-header">
-                <img class="site-logo" src="img/MotoAzulLogo.png" alt="Foodi'n Line"> <!-- Logo de la app -->
-                <p class="tagline">Ordena, disfruta y comparte el sabor 🍝</p> <!-- Eslogan debajo del logo -->
-            </div>
+<div id="cardsContainer" class="cards-container"></div>
 
-            <!-- Inicio del formulario de registro -->
+<p id="notFoundMessage" class="not-found-message" style="display:none;">
+    Restaurante no encontrado
+</p>
 
-            <!-- Input para el nombre -->
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-person-fill"></i></span> <!-- Icono de usuario -->
-                <input type="text" class="form-control" id="User-name" placeholder="Nombre" required/> <!-- Campo de texto -->
-            </div>
-
-            <!-- Input para el apellido -->
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control" id="User-lastname" placeholder="Apellido" required/>
-            </div>
-
-            <!-- Input para el correo electrónico -->
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-envelope"></i></span> <!-- Icono de sobre -->
-                <input type="email" class="form-control" id="User-email" placeholder="Correo electrónico" required>
-            </div>
-
-            <!-- Input para la contraseña -->
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-lock"></i></span> <!-- Icono de candado -->
-                <input type="password" class="form-control" id="User-password" placeholder="Contraseña" required>
-            </div>
-
-            <!-- Confirmar contraseña -->
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                <input type="password" class="form-control" id="Password-confirmation" placeholder="Confirmar contraseña" required>
-            </div>
-
-            <!-- Informacion sobre requisitos de la contraseña -->
-            <div id="passwordHelpBlock" class="form-text mb-3">
-                Tu contraseña debe tener 8-20 caracteres, contener letras y números y no incluir espacios ni caracteres especiales.
-            </div>
-
-            <!-- Checkbox para aceptar terminos y condiciones -->
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="checkboxInitial" required>
-                <label class="form-check-label" for="checkboxInitial">
-                    Acepto los términos y condiciones
-                </label>
-            </div>
-
-            <!-- Boton de registrar -->
-            <button class="btn btn-gradient w-100 mb-3 fw-semibold" onclick="checkPassword()" href="Inicio.html">
-                <i class="bi bi-box-arrow-in-right"></i> Registrar
-            </button>
-        </div> 
-    </main> 
-    <!-- Script para validar la contraseña antes de enviar -->
-    <script src="../BackEnd/Login/function.js"></script>
+<script src="restaurantes.js"></script>
 </body>
 </html>
+
 
 
 
