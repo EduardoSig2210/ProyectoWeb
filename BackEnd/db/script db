@@ -28,6 +28,57 @@ create table menu(
 
 select * from users;
 
+INSERT INTO restaurant (name, section, phone, adress, logo) VALUES
+('Papa Johns', 'Comida rapida', 22733333, 'Col.La Sultana, Antiguo Cuscatlan', 'PapaJhons.png');
+
+INSERT INTO restaurant (name, section, phone, adress, logo) VALUES
+('Hotdog Zepped', 'Comida rapida', 73403353, 'Entrada UCA peatonal', 'Zepped.png');
+
+INSERT INTO restaurant (name, section, phone, adress, logo) VALUES
+('Wendys', 'Comida rapida', 21212222, 'Blvr. Los Proceres, San Salvador', 'Wendys.png');
+
+INSERT INTO restaurant (name, section, phone, adress, logo) VALUES
+('Starbucks', 'Cafeteria', 22240044, 'Paralela Blvr. Los Proceres', 'Starbucks.png');
+
+INSERT INTO restaurant (name, section, phone, adress, logo) VALUES
+('Subway', 'Bocateria', 22676206, 'Calle Mediterraneo, Local 1 Col. La Sultana', 'Subway.png');
+
+INSERT INTO restaurant (name, section, phone, adress, logo) VALUES
+('Go Green', 'Comida Saludable', 22435975, 'Centro Comercial Multipaza, Cd Merliot', 'GOGREEN.png');
+
+INSERT INTO menu (item, price, idRestaurant) VALUES 
+('Pizza Carnivora', 17.99, 1),
+('Garlic Knots', 3.95, 1),
+('Hawaiana', 16.99, 1);
+
+INSERT INTO menu (item, price, idRestaurant) VALUES 
+('Econo-dog', 1.25, 2),
+('Ultra Cheese-dog', 1.75, 2),
+('Ultra Chilli-dog', 1.75, 2),
+('Ultra-Papas', 2.50, 2);
+
+INSERT INTO menu (item, price, idRestaurant) VALUES 
+('Limonada Wildberry', 3.50, 3),
+('Baconator Individual', 8.75, 3),
+('Melt Individual', 7.75, 3),
+('Loaded Fries', 3.25, 3);
+
+INSERT INTO menu (item, price, idRestaurant) VALUES 
+('Green Tea Latte', 5.50, 4),
+('Baguette Española', 6.95, 4),
+('Caramel Macchiatto', 5.99, 4);
+
+INSERT INTO menu (item, price, idRestaurant) VALUES 
+('Pollo Pesto', 5.25, 5),
+('BMT Supremo', 5.75, 5),
+('Galleta Choco Chip', 0.80, 5),
+('Coca-Cola', 1.00, 5);
+
+INSERT INTO menu (item, price, idRestaurant) VALUES 
+('Tokio', 4.45, 6),
+('Go Tijuana', 4.85, 6),
+('IGO Buffalo', 4.65, 6);
+
 drop table users; -- por si acaso xd    
 
 SHOW TABLES; -- para ver todas las tablas

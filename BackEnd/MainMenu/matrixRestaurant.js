@@ -1,3 +1,5 @@
+var local;
+
 function Filter(){
     const categoryButtons = document.querySelectorAll('.category-list button');
     const restaurants = document.querySelectorAll('.restaurant-card');
@@ -18,6 +20,37 @@ function Filter(){
     });
 }
 
-function menuView(){
-    window.location.href = "prototipo.html";
+function menuView(buttonElement){
+    const restaurantCard = buttonElement.closest('.restaurant-card');
+    
+    let idRestaurant = restaurantCard.id;                
+    let category = restaurantCard.getAttribute('data-category');
+    let img = restaurantCard.querySelector('img').src;  
+    
+    const restaurantData = {
+        name: idRestaurant,
+        section: category,
+        logo: img
+    };
+
+    localStorage.setItem('restaurantData', JSON.stringify(restaurantData));
+    
+    console.log(idRestaurant + "||" + category + "||" + img);    
+    
+    moveHtml("prototipo.html");
 }
+
+export function transferData(){
+  return local;
+} 
+
+function moveHtml(tp){
+  window.location.href = tp;
+  console.log("moviendose a " + tp)
+}
+
+window.Filter = Filter;
+window.menuView = menuView;
+window.moveHtml = moveHtml;
+
+console.log("✅ Funciones globales disponibles");
