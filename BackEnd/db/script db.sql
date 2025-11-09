@@ -1,0 +1,114 @@
+CREATE DATABASE DBFoodin_line;
+USE DBFoodin_line;
+
+CREATE TABLE Users(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    lastName VARCHAR(50),
+    email VARCHAR(40),
+    password VARCHAR(10)
+);
+
+CREATE TABLE Restaurant(
+    idRestaurant INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    section VARCHAR(20),
+    phone INT,     --numero telefonico
+    adress VARCHAR(60),
+    logo VARCHAR(50)
+);
+
+CREATE TABLE Menu(
+    idMenu INT PRIMARY KEY AUTO_INCREMENT,
+    item VARCHAR(40),
+    price DECIMAL,
+    idRestaurant INT,
+    FOREIGN KEY (idRestaurant) REFERENCES restaurant(idRestaurant)
+);
+
+SELECT * FROM Users;
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Papa Johns', 'Comida rápida', 22733333, 'Col.La Sultana, Antiguo Cuscatlan', 'papa_johns.png');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Zepped', 'Comida rápida', 73403353, 'Entrada UCA peatonal', 'Zepped.jpg');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Wendys', 'Comida rápida', 21212222, 'Blvr. Los Proceres, San Salvador', 'wendys.png');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Starbucks', 'Bebidas', 22240044, 'Paralela Blvr. Los Proceres', 'starbucks.png');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Bobaluba', 'Bebidas', 77708370, 'Carretera Panamericana, kilómetro 10 Ciudad Merliot', 'bobaluba.png');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('San Martín', 'Postres', 22135852, 'Blvr. Sta. Elena', 'san_martin.png');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Ban Ban', 'Postres', 22794168, 'Centro Comercial Galerías, San Salvador', 'ban_ban.png');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Olive Garden', 'Saludable', 22431177, 'Carretera Panamericana Centro Comercial La Gran Via', 'olive_garden.png');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Subway', 'Saludable', 22676206, 'Calle Mediterraneo, Local 1 Col. La Sultana', 'subway.png');
+
+INSERT INTO Restaurant (name, section, phone, adress, logo) VALUES
+('Go Green', 'Saludable', 22435975, 'Centro Comercial Multipaza, Cd Merliot', 'go_green.png');
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES 
+('Pizza Carnivora', 17.99, 1),
+('Garlic Knots', 3.95, 1),
+('Hawaiana', 16.99, 1);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES 
+('Econo-dog', 1.25, 2),
+('Ultra Cheese-dog', 1.75, 2),
+('Ultra Chilli-dog', 1.75, 2);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES 
+('Limonada Wildberry', 3.50, 3),
+('Baconator Individual', 8.75, 3),
+('Melt Individual', 7.75, 3);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES 
+('Green Tea Latte', 5.50, 4),
+('Baguette Española', 6.95, 4),
+('Caramel Macchiatto', 5.99, 4);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES
+('Black Milk Tea', 4.25, 5),
+('Hibiscus Tea', 2.95, 5),
+('Taro Enamorado', 4.95, 5);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES
+('Pastel De Chocolate Mediano', 17, 6),
+('Coffee Cake Navideño', 9.15, 6),
+('Rosca Vienesa', 6.25, 6);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES
+('Fruta mediana', 18.50, 7),
+('Crepa De Nutella Y Banano', 4.50, 7),
+('Semita Alta', 3.25, 7);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES
+('Zuppe Toscana', 7.50, 8),
+('Sirloin With Fettuccine Alfredo', 18.95, 8),
+('Chicken Alfredo', 16.99, 8);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES 
+('Pollo Pesto', 5.25, 9),
+('BMT Supremo', 5.75, 9),
+('Galleta Choco Chip', 0.80, 9);
+
+INSERT INTO Menu (item, price, idRestaurant) VALUES 
+('Tokio', 4.45, 10),
+('Go Tijuana', 4.85, 10),
+('IGO Buffalo', 4.65, 10);
+
+DROP TABLE Users; -- por si acaso 
+
+SHOW TABLES; -- para ver todas las tablas
+DESCRIBE Users; -- para ver sus columnas
