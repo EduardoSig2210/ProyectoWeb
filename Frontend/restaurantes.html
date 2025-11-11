@@ -69,13 +69,6 @@
               <p>Mensajes nuevos</p>
             </div>
           </div>
-           <div class="restaurant-card" data-category="comida-rapida" id="Zepped">
-            <img src="img/Zepped.jpg" alt="Zepped">
-            <h3>Zepped</h3>
-            <p>Deliciosos hot dogs, hamburguesas y más</p>
-            <button onclick="menuView()">Ver menú</button>
-
-          </div>
 
           <div class="action-item">
             <i class="bi bi-cart-fill"></i>
@@ -144,6 +137,14 @@
               <p>Hamburguesas, papas fritas y refrescos.</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
+
+            
+           <div class="restaurant-card" data-category="comida-rapida" id="Zepped">
+            <img src="img/Zepped.jpg" alt="Zepped">
+            <h3>Zepped</h3>
+            <p>Deliciosos hot dogs, hamburguesas y más</p>
+            <button onclick="menuView()">Ver menú</button>
+          </div>
 
             <div
               class="restaurant-card"
@@ -218,49 +219,5 @@
         </p>
       </div>
     </div>
-
-  <!-- Script busqueda -->
-  <script>
-    const inputBusqueda = document.getElementById("buscarRestaurante");
-    const tarjetas = document.querySelectorAll(".restaurant-card");
-    const mensaje = document.getElementById("mensaje-no-encontrado");
-
-    inputBusqueda.addEventListener("input", () => {
-      const texto = inputBusqueda.value.toLowerCase();
-      let coincidencias = 0;
-
-      tarjetas.forEach(card => {
-        const nombre = card.querySelector("h3").textContent.toLowerCase();
-        const descripcion = card.querySelector("p").textContent.toLowerCase();
-        const categoria = card.getAttribute("data-category").toLowerCase();
-
-        if (nombre.includes(texto) || descripcion.includes(texto) || categoria.includes(texto)) {
-          card.style.display = "block";
-          coincidencias++;
-        } else {
-          card.style.display = "none";
-        }
-      });
-    </script>
-    <script>
-      const menuItems = document.querySelectorAll(".action-item");
-
-      menuItems.forEach((item) => {
-        item.addEventListener("click", () => {
-          const menu = item.querySelector(".dropdown-menu");
-          menu.style.display =
-            menu.style.display === "block" ? "none" : "block";
-        });
-      });
-
-      // Cerrar al hacer clic fuera
-      document.addEventListener("click", (e) => {
-        if (!e.target.closest(".action-item")) {
-          document.querySelectorAll(".dropdown-menu").forEach((menu) => {
-            menu.style.display = "none";
-          });
-        }
-      });
-    </script>
   </body>
 </html>
