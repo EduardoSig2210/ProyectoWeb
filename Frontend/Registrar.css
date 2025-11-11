@@ -159,4 +159,8 @@ main.container {
     .tagline { font-size: 1.1rem; }
 }
 
+.term-box{
+    width: 550px;
+}
+
 }
