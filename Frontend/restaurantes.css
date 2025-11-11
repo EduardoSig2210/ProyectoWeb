@@ -45,7 +45,8 @@ body {
   display: flex;
   align-items: center;
   background: transparent; 
-  border-radius: 30px;
+  border-radius: 30px;          /* bordes redondeados */
+  border: 2px solid #ffffff;    /* borde blanco */
   padding: 5px 10px;
 }
 
@@ -58,6 +59,10 @@ body {
   width: 250px;
 }
 
+.search-bar input::placeholder {
+    color: #dbd8c5; /* o el color que quieras */
+    opacity: 1;
+}
 .search-bar button {
   background: var(--wine-berry);
   border: none;
@@ -84,17 +89,63 @@ body {
   transform: scale(1.2);
   color: var(--potters-clay);
 }
+.action-item {
+  position: relative;
+  margin-left: 20px;
+  cursor: pointer;
+}
 
-/* Menu lateral */
+.action-item i {
+  font-size: 1.5rem;
+  color: var(--citrine-white);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.action-item i:hover {
+  transform: scale(1.2);
+  color: var(--potters-clay);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--temptress);
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: none;
+  min-width: 140px;
+  animation: fadeDown 0.25s ease;
+}
+
+.dropdown-menu p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown-menu p:hover {
+  color: var(--wine-berry);
+  transform: translateX(4px);
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .Menu_lateral {
   width: 90px;
-  height: 650px;
+  height: auto; 
+  min-height: 100px; 
   background: var(--wine-berry);
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
-  align-content: flex-start;
-  justify-content: center;
+  flex-direction: column; 
+  align-items: center;
+  padding-top: 10px; 
 }
 
 .icon {
@@ -131,7 +182,7 @@ body {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 2rem;
-  color: var(--potters-clay);
+  color: #4d1616; 
 }
 
 .category-list {
@@ -217,8 +268,29 @@ body {
   transform: scale(1.05);
 }
 
+.no-encontrado {
+  background: rgba(122, 43, 54, 0.15);  
+  color: var(--wine-berry);
+  border: 1.5px solid rgba(255, 223, 200, 0.9); 
+  border-radius: 18px;
+  padding: 12px 28px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: fit-content;
+  margin: 35px auto;
+  letter-spacing: 0.8px; 
+  text-transform: uppercase;
 
+  backdrop-filter: blur(4px); 
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 
+  animation: appearSoft 0.45s ease-out;
+}
+/* Animacion de entrada suave */
+@keyframes appearSoft {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 /* Footer */
 footer {
   text-align: center;

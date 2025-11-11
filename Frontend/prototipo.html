@@ -18,22 +18,16 @@
   <!-- CSS personalizado -->
   <link rel="stylesheet" href="prototipo.css">
 </head>
+
 <body>
-  <!-- Encabezado principal -->
-  <header class="navbar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="logo-section d-flex align-items-center">
-        <img src="img/Logo_Header_Letras_Blancas.png" alt="Logo Foodi’n Line" class="logo">
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Buscar restaurantes o platos">
-        <button><i class="bi bi-search"></i></button>
-      </div>
-      <div class="user-actions d-flex align-items-center">
-        <a href="#"><i class="bi bi-bell-fill"></i></a>
-        <a href="#"><i class="bi bi-chat-dots-fill"></i></a>
-        <a href="#"><i class="bi bi-person-circle"></i></a>
-      </div>
+
+<header class="navbar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <img src="img/Logo_Header_Letras_Blancas.png" class="logo">
+
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar">
+      <button><i class="bi bi-search"></i></button>
     </div>
   </header>
 
@@ -46,59 +40,72 @@
     <!-- Contenido -->
     <div class="content-area">
 
-<!-- Menu -->
-    <!--Lo que esta es un ejemplo del menu de un local-->
-<section class="menu">
-  <div class="menu-grid">
-    <!-- Tarjeta Papa John's -->
-    <div class="menu-card">
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item"><img src="https://pedidosya.dhmedia.io/image/pedidosya/products/1be3d373-85f6-4ff0-9af4-2851c4f83868?quality=90&height=96&width=96&webp=1&dpi=1.5" alt="imagen1"></li>
-        <li class="list-group-item">The works</li>
-        <li class="list-group-item">$ 15.99</li>
-        <li class="list-group-item">
-          <div class="qty-container">
-            <button class="qty-btn" id="minus">-</button>
-            <span id="qty">0</span>
-            <button class="qty-btn" id="plus">+</button>
+      <!-- Menu -->
+      <!--Lo que esta es un ejemplo del menu de un local-->
+      <section class="menu">
+        <div class="menu-grid">
+          <!-- Tarjeta Papa John's -->
+          <div class="menu-card">
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item"><img
+                  alt="imagen1"></li>
+              <li class="list-group-item" id="itemName1">The works</li>
+              <li class="list-group-item" id="itemPrice1">$ 15.99</li>
+              <li class="list-group-item">
+                <div class="qty-container">
+                  <button class="qty-btn" id="minus" onclick="decreasing(1)">-</button>
+                  <span id="qty1">0</span>
+                  <button class="qty-btn" id="plus" onclick="increasing(1)">+</button>
+                </div>
+              </li>
+              <li class="list-group-item" id="subtotal1">subtotal: $ </li>
+            </ul>
+
+
           </div>
-        </li>
-        <li class="list-group-item">subtotal: $ </li>
-      </ul>
-      
-      
-    </div>
-    <div class="menu-card">
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item"><img src="https://pedidosya.dhmedia.io/image/pedidosya/products/291652fa-3e9a-4e04-b459-b60ddcb4a90f?quality=90&height=96&width=96&webp=1&dpi=1.5" alt="imagen2"></li>
-        <li class="list-group-item">Alfredo Delight</li>
-        <li class="list-group-item">$ 15.99</li>
-        <li class="list-group-item">
-          <div class="qty-container">
-            <button class="qty-btn" id="minus">-</button>
-            <span id="qty">0</span>
-            <button class="qty-btn" id="plus">+</button>
+          <div class="menu-card">
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item"><img
+                  alt="imagen2"></li>
+              <li class="list-group-item" id="itemName2">Alfredo Delight</li>
+              <li class="list-group-item"id="itemPrice2">$ 15.99</li>
+              <li class="list-group-item">
+                <div class="qty-container">
+                  <button class="qty-btn" id="minus" onclick="decreasing(2)">-</button>
+                  <span id="qty2">0</span>
+                  <button class="qty-btn" id="plus" onclick="increasing(2)">+</button>
+                </div>
+              </li>
+              <li class="list-group-item" id="subtotal2">subtotal: $ </li>
+            </ul>
           </div>
-        </li>
-        <li class="list-group-item">subtotal: $ </li>
-      </ul>
-    </div>
-    <div class="menu-card">
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item"><img src="https://pedidosya.dhmedia.io/image/pedidosya/products/c43eecda-e301-4539-b1c6-fdc16da3fe56?quality=90&height=96&width=96&webp=1&dpi=1.5" alt="imagen3"></li>
-        <li class="list-group-item">Carnivora</li>
-        <li class="list-group-item">$ 15.99</li>
-        <li class="list-group-item">
-          <div class="qty-container">
-            <button class="qty-btn" id="minus">-</button>
-            <span id="qty">0</span>
-            <button class="qty-btn" id="plus">+</button>
+          <div class="menu-card">
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item"><img                  
+                  alt="imagen3"></li>
+              <li class="list-group-item"id="itemName3">Carnivora</li>
+              <li class="list-group-item" id="itemPrice3">$ 15.99</li>
+              <li class="list-group-item">
+                <div class="qty-container">
+                  <button class="qty-btn" id="minus" onclick="decreasing(3)">-</button>
+                  <span id="qty3">0</span>
+                  <button class="qty-btn" id="plus" onclick="increasing(3)">+</button>
+                </div>
+              </li>
+              <li class="list-group-item" id="subtotal3">subtotal: $ </li>
+            </ul>
           </div>
-        </li>
-        <li class="list-group-item">subtotal: $ </li>
-      </ul>
+          <div class="order-summary">
+            <h5>Resumen del Pedido</h5>
+            <p>Total: $ <span id="price">0.00</span></p>
+          </div>
+        </div>
+      </section>
     </div>
+    </section>
   </div>
-</section>
+  </div>
+  <script type="module" src="../BackEnd/menu/dynamic.js"></script>
 </body>
 </html>
+

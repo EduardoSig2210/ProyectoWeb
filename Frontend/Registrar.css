@@ -52,6 +52,17 @@ main.container {
     margin-bottom: 30px;           /* separa del login */
 }
 
+}
+
+/* Seccion del logo */
+.logo-section {
+    display: flex;
+    flex-direction: column;        /* logo arriba, texto abajo */
+    justify-content: center;       /* centra verticalmente dentro de la seccion */
+    align-items: center;           /* centra horizontalmente */
+    margin-bottom: 30px;           /* separa del login */
+}
+
 /* Logo */
 .site-logo{
     width: 200px;                  /* tamaño del logo */

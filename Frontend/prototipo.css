@@ -30,9 +30,16 @@ body {
   top: 0;
   width: 100%;
   background: var(--wine-berry);
-  padding: 15px 0;
+  padding: 12px 0;
   z-index: 10;
   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 
 .logo {
@@ -40,15 +47,17 @@ body {
   height: auto;
 }
 
-/* Barra de busqueda */
+/* Buscador centrado */
 .search-bar {
   display: flex;
   align-items: center;
-  background: transparent; 
+  background: transparent;
   border-radius: 30px;
-  border-color:  var(--citrine-white);
-  padding: 5px 10px;
-  color: var(--citrine-white);
+  border: 2px solid #ffffff;
+  padding: 5px 12px;
+  flex: 1;
+  max-width: 450px;
+  margin: 0 60px;
 }
 
 .search-bar input {
@@ -57,32 +66,32 @@ body {
   color: var(--citrine-white);
   padding: 8px;
   outline: none;
-  width: 250px;
+  width: 100%;
 }
-.search-bar input::placeholder{
+
+.search-bar input::placeholder {
   color: var(--citrine-white);
 }
 
 .search-bar button {
-  background: var(--wine-berry);
+  background: none;
   border: none;
-  border-radius: 50%;
-  padding: 8px 10px;
   color: var(--citrine-white);
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 1.1rem;
 }
 
-.search-bar button:hover {
-  background: var(--potters-clay);
+/* ICONOS usuario */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Iconos usuario */
 .user-actions a {
   color: var(--citrine-white);
-  margin-left: 15px;
-  font-size: 1.3rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 1.6rem;
+  transition: transform .3s ease, color .3s ease;
 }
 
 .user-actions a:hover {
@@ -93,7 +102,7 @@ body {
 /* Menu lateral */
 .Menu_lateral {
   width: 90px;
-  height: 650px;
+  height: auto;
   background: var(--wine-berry);
   display: flex;
   flex-direction: row;
@@ -126,43 +135,66 @@ body {
   padding: 30px;
 }
 
-/* Categorias */
+.logo_restaurant {
+  display: block;
+  margin: 20px auto 40px auto;
+  width: 260px;      /* Más ancho */
+  height: 160px;     /* Más bajo → lo hace ovalado */
+  object-fit: cover; /* Mantiene proporción sin deformar */
+  border-radius: 50px; /* Bordes ovalados suaves */
+  border: 5px solid var(--wine-berry); 
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo_restaurant:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
 
 /* Restaurantes */
 .menu {
   text-align: center;
-  margin-top: 30px; 
-  padding: 0; 
-  border-left: 5px solid var(--wine-berry); 
-  background: transparent; 
+  margin-top: 30px;
+  padding: 0;
+  border-left: 5px solid var(--wine-berry);
+  background: transparent;
 }
 
 .menu-grid {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 20px;
+  gap: 25px;
 }
+
+
 
 .menu-card {
   background: var(--citrine-white);
   color: var(--temptress);
   border-radius: 15px;
   padding: 20px;
-  width: auto;
+  width: 100%;
+  display: flex; /* ← antes no estaba */
+  align-items: center;
+  gap: 20px;     /* separación entre imagen y texto */
   box-shadow: 0 3px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
+
 
 .menu-card:hover {
   transform: scale(1.03);
 }
 
 .menu-card img {
-  width: 100%;
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 15px;
 }
+
 
 .menu-card h3 {
   color: var(--wine-berry);
@@ -174,42 +206,143 @@ body {
   margin-bottom: 15px;
 }
 
-.qty-container{
+/* Selector de cantidades */
+.qty-container {
   display: inline-flex;
   align-items: center;
   gap: 15px;
   padding: 8px 16px;
   background-color: var(--test);
   border-radius: 25px;
-  font-family: Arial;
   font-size: 18px;
 }
 
-.qty-btn{
-  border-radius: 12px;
+.qty-btn {
   border: none;
   background: none;
-  font-size: 12px;
+  font-size: 18px;
   cursor: pointer;
-  padding: 4px 10px;
 }
 
-.qty-btn:active{
+.qty-btn:active {
   transform: scale(0.9);
   background: var(--citrine-white);
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(122, 43, 54, 0.8);
-  font-size: 0.9rem;
+/* Carrito flotante */
+#cart-widget {
+  position: fixed;
+  top: 110px;
+  right: 30px;
+  background: var(--wine-berry);
+  padding: 12px 18px;
+  border-radius: 50px;
+  color: var(--citrine-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+  z-index: 500;
+  transition: transform .3s ease;
 }
 
-.list-group-item{
-  background: var(--citrine-white);
-  border: none;
-  align-content: center;
-  justify-content: center;
+#cart-widget:hover {
+  transform: scale(1.08);
 }
+
+#cart-count {
+  background: var(--potters-clay);
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Panel de carrito */
+#cart-panel {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 55px;
+  width: 260px;
+  background: var(--citrine-white);
+  color: var(--temptress);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+#checkout-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--wine-berry);
+  color: var(--citrine-white);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+#checkout-btn:hover {
+  background: var(--potters-clay);
+}
+
+/* ----- ABANICO MENU ----- */
+.fan-menu {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.main-icon {
+  color: var(--citrine-white);
+  font-size: 1.9rem;
+  transition: transform .3s ease;
+}
+
+.fan-menu:hover .main-icon {
+  transform: scale(1.15);
+}
+
+.fan-options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  pointer-events: none;
+}
+
+.fan-options a {
+  position: absolute;
+  color: var(--citrine-white);
+  font-size: 1.4rem;
+  opacity: 0;
+  transform: translate(0,0);
+  transition: transform .4s ease, opacity .3s ease;
+}
+
+/* Distribucion en abanico */
+.fan-menu:hover .fan-options a:nth-child(1) {
+  transform: translate(-50px, -10px);
+  opacity: 1;
+}
+
+.fan-menu:hover .fan-options a:nth-child(2) {
+  transform: translate(-35px, -45px);
+  opacity: 1;
+}
+
+.fan-menu:hover .fan-options a:nth-child(3) {
+  transform: translate(0px, -60px);
+  opacity: 1;
+}
+
+/* Permitir clic cuando está abierto */
+.fan-menu:hover .fan-options {
+  pointer-events: auto;
+}
+
+
