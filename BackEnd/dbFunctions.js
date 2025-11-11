@@ -134,35 +134,6 @@ app.get('/api/usuarios', (req, res) => {
     });
 });
 
-app.get('/api/restaurant', (req, res) => {
-    connection.query('select idRestaurant, name from restaurant', function(error, results) {
-        if (error) {
-            return res.status(500).json({ error: "Error al obtener los restaurantes" });
-        }
-        res.json(results);
-    });
-})
-
-app.get('/api/restaurant/:name', (req, res) => {
-    const name = req.params.name;
-    connection.query('select idRestaurant from restaurant where name = ?',[name], function(error, results) {
-        if (error) {
-            return res.status(500).json({ error: "Error al obtener los restaurantes" });
-        }
-        res.json(results);
-    });
-})
-
-app.get('/api/menu/:restaurant', (req, res) => {
-    const restaurant = req.params.restaurant;
-    connection.query('select item, price from menu where idRestaurant = ?', [restaurant], function(error, results) {
-        if (error) {
-            return res.status(500).json({ error: "Error al obtener los restaurantes" });
-        }
-        res.json(results);
-    });
-})
-
 // Iniciar servidor
 app.listen(PORT, () => {    
     console.log("DO NOT touch the link")
