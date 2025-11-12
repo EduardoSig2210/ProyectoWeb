@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-
     <script
       type="module"
-      src="../BackEnd/MainMenu/matrixRestaurant.js" defer></script>
+      src="../BackEnd/MainMenu/matrixRestaurant.js"
+      defer
+    ></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -116,43 +117,34 @@
         <!-- Restaurantes destacados -->
         <section class="restaurants">
           <div class="restaurant-grid">
-            <div
-              class="restaurant-card"
-              data-category="comida-rapida"
-              id="Papa Johns"
-            >
+            <div class="restaurant-card" data-category="comida-rapida" id="Papa Johns">
               <img src="img/papa_johns.png" alt="Papa John's" />
               <h3>Papa John's</h3>
+              <div class="rating">⭐⭐⭐</div>
               <p>Pizzas deliciosas, alitas y más...</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
 
-            <div
-              class="restaurant-card"
-              data-category="comida-rapida"
-              id="Wendys"
-            >
+            <div class="restaurant-card" data-category="comida-rapida" id="Wendys">
               <img src="img/wendys.png" alt="Wendy's" />
               <h3>Wendy's</h3>
+              <div class="rating">⭐⭐⭐⭐☆</div>
               <p>Hamburguesas, papas fritas y refrescos.</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
 
-            
-           <div class="restaurant-card" data-category="comida-rapida" id="Zepped">
-            <img src="img/Zepped.jpg" alt="Zepped">
-            <h3>Zepped</h3>
-            <p>Deliciosos hot dogs, hamburguesas y más</p>
-            <button onclick="menuView()">Ver menú</button>
-          </div>
+            <div class="restaurant-card" data-category="comida-rapida" id="Zepped">
+              <img src="img/Zepped.jpg" alt="Zepped">
+              <h3>Zepped</h3>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p>Deliciosos hot dogs, hamburguesas y más</p>
+              <button onclick="menuView()">Ver menú</button>
+            </div>
 
-            <div
-              class="restaurant-card"
-              data-category="postres"
-              id="San Martin"
-            >
+            <div class="restaurant-card" data-category="postres" id="San Martin">
               <img src="img/san_martin.png" alt="San Martín" />
               <h3>San Martín</h3>
+              <div class="rating">⭐⭐⭐⭐</div>
               <p>Comida gourmet, carnes y ensaladas.</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
@@ -160,6 +152,7 @@
             <div class="restaurant-card" data-category="bebidas" id="Starbucks">
               <img src="img/starbucks.png" alt="Starbucks" />
               <h3>Starbucks</h3>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
               <p>Cafés, frappés y pasteles deliciosos.</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
@@ -167,17 +160,15 @@
             <div class="restaurant-card" data-category="bebidas" id="Bobaluba">
               <img src="img/bobaluba.png" alt="Bobaluba" />
               <h3>Bobaluba</h3>
+              <div class="rating">⭐⭐⭐☆☆</div>
               <p>Deliciosas bebidas de taro, matcha y más</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
 
-            <div
-              class="restaurant-card"
-              data-category="saludable"
-              id="Go Green"
-            >
+            <div class="restaurant-card" data-category="saludable" id="Go Green">
               <img src="img/go_green.png" alt="Go Green" />
               <h3>Go Green</h3>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
               <p>Opciones saludables, ensaladas y jugos.</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
@@ -185,17 +176,15 @@
             <div class="restaurant-card" data-category="postres" id="Ban_Ban">
               <img src="img/ban_ban.png" alt="Ban Ban" />
               <h3>Ban Ban</h3>
+              <div class="rating">⭐⭐⭐☆☆</div>
               <p>Comida rápida asiática y noodles.</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
 
-            <div
-              class="restaurant-card"
-              data-category="saludable"
-              id="Olive_Garden"
-            >
+            <div class="restaurant-card" data-category="saludable" id="Olive_Garden">
               <img src="img/olive_garden.png" alt="Olive Garden" />
               <h3>Olive Garden</h3>
+              <div class="rating">⭐⭐⭐⭐☆</div>
               <p>Deliciosos platillos italianos, bebidas y más.</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
@@ -203,6 +192,7 @@
             <div class="restaurant-card" data-category="saludable" id="Subway">
               <img src="img/subway.png" alt="Subway" />
               <h3>Subway</h3>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
               <p>Sandwiches frescos y wraps saludables.</p>
               <button onclick="menuView(this)">Ver menú</button>
             </div>
@@ -210,14 +200,11 @@
         </section>
 
         <!-- Mensaje de error -->
-        <p
-          id="mensaje-no-encontrado"
-          class="no-encontrado"
-          style="display: none"
-        >
+        <p id="mensaje-no-encontrado" class="no-encontrado" style="display: none">
           Restaurante no encontrado
         </p>
       </div>
     </div>
   </body>
 </html>
+

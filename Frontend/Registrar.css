@@ -41,7 +41,7 @@ body {
     background-attachment: fixed;
 }
 
-/* 🩸 Capa vino degradada encima del fondo */
+/*  Capa vino degradada encima del fondo */
 body::before {
     content: "";
     position: fixed;
@@ -50,7 +50,7 @@ body::before {
     z-index: 0;
 }
 
-/* 🌸 Contenedor principal */
+/* Contenedor principal */
 main.container {
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@ main.container {
     z-index: 1; /* sobre el fondo */
 }
 
-/* 🪶 Logo */
+/*  Logo */
 .logo-section {
     display: flex;
     flex-direction: column;
@@ -81,7 +81,7 @@ main.container {
     margin-top: 10px;
 }
 
-/* 📦 Caja del formulario */
+/*  Caja del formulario */
 .register-box {
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(12px);
@@ -92,7 +92,7 @@ main.container {
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* 🧾 Encabezado */
+/*  Encabezado */
 .register-header {
     text-align: center;
     margin-bottom: 30px;
@@ -115,7 +115,7 @@ main.container {
     text-align: center;
 }
 
-/* ✏️ Campos del formulario */
+/*  Campos del formulario */
 .input-group-text {
     background-color: var(--wine-berry);
     color: var(--citrine-white);
@@ -134,7 +134,7 @@ main.container {
     box-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
 
-/* 🌈 Botones con degradado */
+/*  Botones con degradado */
 .btn-gradient {
     background: linear-gradient(90deg, #a33b50, #995e05);
     border: 2px solid #fff;
@@ -156,7 +156,7 @@ main.container {
     color: #fff;
 }
 
-/* 📱 Pantallas pequeñas */
+/*  Pantallas pequeñas */
 @media (max-width: 992px) {
     .register-box {
         width: 90%;
