@@ -78,25 +78,25 @@ main.container {
 }
 
 /* Encabezado del registro */
-.register-header {
+.ticket-header {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.register-header img.site-logo {
+.ticket-header img.site-logo {
     width: 200px;
     margin-bottom: 30px;
 }
 
 /* Contenedor del formulario */
-.register-container{
+.ticket-container{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 /* Caja del formulario */
-.register-box{
+.ticket-box{
     background: rgba(255,255,255,0.15);  /* fondo translucido */
     backdrop-filter: blur(12px);         /* desenfoque detras */
     border-radius: 20px;                 /* bordes redondeados */
@@ -107,13 +107,13 @@ main.container {
 }
 
 /* Titulos dentro del formulario */
-.register-header h2{
+.ticket-header h2{
     color: var(--citrine-white); /* color de letra */
     font-weight: 700;            /* mas grueso */
     text-align: center;          /* centrado */
 }
 
-.register-header p{
+.ticket-header p{
     color: rgba(255,255,255,0.8); /* texto ligeramente transparente */
     font-size: 0.95rem;
     text-align: center;
@@ -162,7 +162,7 @@ main.container {
 
 /* pantallas más pequeñas */
 @media (max-width: 992px) {
-    .register-box {
+    .ticket-box {
         width: 90%;               /* ocupa mas espacio en moviles */
         padding: 30px;
     }
@@ -170,7 +170,4 @@ main.container {
     .tagline { font-size: 1.1rem; }
 }
 
-.term-box{
-    width: 550px;
-}
 
