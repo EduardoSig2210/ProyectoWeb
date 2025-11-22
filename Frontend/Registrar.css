@@ -29,19 +29,21 @@ body {
         url("img/collage7.jpg"),
         url("img/collage8.jpg"),
         url("img/collage9.jpg");
+
     background-size: 
-        40% 40%, 40% 40%, 40% 40%, 
-        40% 40%, 40% 40%, 40% 40%, 
-        40% 40%, 40% 40%, 40% 40%;
+        33% 33%, 33% 33%, 33% 33%,
+        33% 33%, 33% 33%, 33% 33%,
+        33% 33%, 33% 33%, 33% 33%;
+
     background-position: 
         top left, top center, top right,
         center left, center center, center right,
         bottom left, bottom center, bottom right;
+
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/*  Capa vino degradada encima del fondo */
 body::before {
     content: "";
     position: fixed;
@@ -57,7 +59,7 @@ main.container {
     align-items: center;
     padding: 20px;
     position: relative;
-    z-index: 1; /* sobre el fondo */
+    z-index: 1; 
 }
 
 /*  Logo */
