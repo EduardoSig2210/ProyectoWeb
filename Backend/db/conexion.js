@@ -10,6 +10,7 @@ let conection = db.createConnection({
 conection.connect(function(err){
     if(err){
         console.log("fallo");
+        console.log(err);
     }else{
         console.log("Conexion exitosa");
     }
