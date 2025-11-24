@@ -1,0 +1,26 @@
+{
+  "name": "proyectoweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Frontend/Inicio.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dbFunctions.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardoSig2210/ProyectoWeb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EduardoSig2210/ProyectoWeb/issues"
+  },
+  "homepage": "https://github.com/EduardoSig2210/ProyectoWeb#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}

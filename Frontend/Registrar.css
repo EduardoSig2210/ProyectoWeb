@@ -1,72 +1,100 @@
-:root{
-    /* Colores principales del sitio */
+:root {
+    /* 🎨 Colores principales del sitio */
     --espresso: #5e3417;        
     --citrine-white: #f9edd2;   
     --temptress: #440200;       
     --wine-berry: #5d222c;    
     --potters-clay: #8c623b;    
+}
 
-/* General */
+/* 🌆 Fondo general con collage */
 body {
-    margin: 0;                    /* elimina margenes por defecto */
-    font-family: 'Poppins', sans-serif; /* fuente principal */
-    background-color: #5d222c;    /* fondo color vino */
-    color: #f9edd2;               /* texto color cremoso */
-    min-height: 100vh;            /* altura minima 100% de la ventana */
-    display: flex;                /* usamos flex para centrar contenido */
-    justify-content: center;      /* centra horizontalmente */
-    align-items: center;          /* centra verticalmente */
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--citrine-white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    background-color: var(--wine-berry);
+    background-image: 
+        url("img/collage1.jpg"),
+        url("img/collage2.jpg"),
+        url("img/collage3.jpg"),
+        url("img/collage4.jpg"),
+        url("img/collage5.jpg"),
+        url("img/collage6.jpg"),
+        url("img/collage7.jpg"),
+        url("img/collage8.jpg"),
+        url("img/collage9.jpg");
+
+    background-size: 
+        33% 33%, 33% 33%, 33% 33%,
+        33% 33%, 33% 33%, 33% 33%,
+        33% 33%, 33% 33%, 33% 33%;
+
+    background-position: 
+        top left, top center, top right,
+        center left, center center, center right,
+        bottom left, bottom center, bottom right;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Fondo decorativo */
-.background-image{
-    position: fixed;               /* siempre fijo detras de todo */
-    inset: 0;                      /* ocupa toda la pantalla */
-    background: linear-gradient(135deg, #f7efe2 0%, #f4e6d7 50%, #d9b89c 100%);
-    filter: brightness(0.9);       /* lo hace un poco mas oscuro */
-    z-index: -2;                   /* detras del contenido */
-}
-
-.gradient-overlay{
-    position: fixed;               
+body::before {
+    content: "";
+    position: fixed;
     inset: 0;
-    background: linear-gradient(160deg, var(--temptress) 15%, var(--potters-clay) 45%, var(--espresso) 85%);
-    opacity: 0.8;                  /* un poco transparente */
-    z-index: -1;                   /* encima del fondo pero detras del contenido */
+    background: linear-gradient(160deg, rgba(68,2,0,0.7) 10%, rgba(93,34,44,0.7) 50%, rgba(94,52,23,0.6) 90%);
+    z-index: 0;
 }
 
 /* Contenedor principal */
 main.container {
-    display: flex;                 /* contenedor flexible */
-    flex-direction: column;        /* apila logo y login verticalmente */
-    align-items: center;           /* centra horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    position: relative;
+    z-index: 1; 
 }
 
-/* Seccion del logo */
+/*  Logo */
 .logo-section {
     display: flex;
-    flex-direction: column;        /* logo arriba, texto abajo */
-    justify-content: center;       /* centra verticalmente dentro de la seccion */
-    align-items: center;           /* centra horizontalmente */
-    margin-bottom: 30px;           /* separa del login */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-/* Logo */
-.site-logo{
-    width: 200px;                  /* tamaño del logo */
-    max-width: 100%;               /* nunca se desborde */
-    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3)); /* sombra para resaltar */
+.site-logo {
+    width: 200px;
+    max-width: 100%;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
 }
 
-/* Texto bajo el logo */
-.tagline{
-    font-size: 1.2rem;             /* tamaño de letra */
-    opacity: 0.9;                  /* ligeramente transparente */
-    margin-top: 10px;              /* espacio encima */
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-top: 10px;
 }
 
-/* Encabezado del registro */
+/*  Caja del formulario */
+.register-box {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 600px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/*  Encabezado */
 .register-header {
     text-align: center;
     margin-bottom: 30px;
@@ -77,86 +105,72 @@ main.container {
     margin-bottom: 30px;
 }
 
-/* Contenedor del formulario */
-.register-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.register-header h2 {
+    color: var(--citrine-white);
+    font-weight: 700;
+    text-align: center;
 }
 
-/* Caja del formulario */
-.register-box{
-    background: rgba(255,255,255,0.15);  /* fondo translucido */
-    backdrop-filter: blur(12px);         /* desenfoque detras */
-    border-radius: 20px;                 /* bordes redondeados */
-    padding: 40px;
-    width: 600px;                         /* ancho mas amplio */
-    border: 1px solid rgba(255,255,255,0.2); /* borde sutil */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* sombra */
-}
-
-/* Titulos dentro del formulario */
-.register-header h2{
-    color: var(--citrine-white); /* color de letra */
-    font-weight: 700;            /* mas grueso */
-    text-align: center;          /* centrado */
-}
-
-.register-header p{
-    color: rgba(255,255,255,0.8); /* texto ligeramente transparente */
+.register-header p {
+    color: rgba(255,255,255,0.8);
     font-size: 0.95rem;
     text-align: center;
 }
 
-/* Inputs (icono y campo) */
-.input-group-text{
-    background-color: var(--wine-berry); /* fondo del icono */
-    color: var(--citrine-white);         /* color del icono */
+/*  Campos del formulario */
+.input-group-text {
+    background-color: var(--wine-berry);
+    color: var(--citrine-white);
     border: none;
-    border-radius: 10px 0 0 10px;       /* esquinas redondeadas solo a la izquierda */
+    border-radius: 10px 0 0 10px;
 }
 
-.input-group .form-control{
-    width: calc(100% - 50px);           /* ancho ajustado al icono */
+.input-group .form-control {
+    width: calc(100% - 50px);
     border: none;
-    border-radius: 0 10px 10px 0;       /* redondeo derecha */
+    border-radius: 0 10px 10px 0;
     padding: 10px;
 }
 
-.form-control:focus{
-    box-shadow: 0 0 8px rgba(255,255,255,0.5); /* resalta al seleccionar */
+.form-control:focus {
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
 
-/* Botones con degradado y borde blanco */
+/*  Botones con degradado */
 .btn-gradient {
-    background: linear-gradient(90deg, #a33b50, #995e05); /* degradado mas claro */
-    border: 2px solid #fff;       /* borde blanco */
+    background: linear-gradient(90deg, #a33b50, #995e05);
+    border: 2px solid #fff;
     border-radius: 15px;
     color: #fff;
     padding: 12px;
     font-weight: 600;
-    width: 250px;                 /* tamaño fijo */
+    width: 250px;
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 10px auto;            /* centrado horizontal y espacio vertical */
+    margin: 10px auto;
 }
 
 .btn-gradient:hover, .btn-gradient:focus {
-    transform: translateY(-2px);                  /* se levanta un poco */
-    box-shadow: 0 6px 15px rgba(255,255,255,0.4); /* sombra al pasar el mouse */
-    color: #fff;                                  /* letras blancas siempre */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255,255,255,0.4);
+    color: #fff;
 }
 
-/* pantallas más pequeñas */
+/*  Pantallas pequeñas */
 @media (max-width: 992px) {
     .register-box {
-        width: 90%;               /* ocupa mas espacio en moviles */
+        width: 90%;
         padding: 30px;
     }
-    .site-logo { width: 120px; }  /* logo mas pequeño en movil */
+    .site-logo { width: 120px; }
     .tagline { font-size: 1.1rem; }
 }
 
+.term-box {
+    width: 550px;
 }
+
+
+
