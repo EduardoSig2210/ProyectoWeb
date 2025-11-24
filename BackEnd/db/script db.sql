@@ -109,5 +109,6 @@ INSERT INTO Menu (item, price, idRestaurant) VALUES
 ('IGO Buffalo', 4.65, 10);
 
 DROP TABLE Users; -- por si acaso 
+
 SHOW TABLES; -- para ver todas las tablas
 DESCRIBE Users; -- para ver sus columnas
