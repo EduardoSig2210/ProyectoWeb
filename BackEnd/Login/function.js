@@ -172,7 +172,7 @@ async function login() {
       text: error.message,
       background: '#832525ff',
       color: '#ffffffff',
-      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonColor: 'rgba(122, 43, 54, 0.8)',
       confirmButtonText: 'Reintentar'
     });
   }
