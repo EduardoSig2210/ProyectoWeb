@@ -11,10 +11,13 @@ var itemName1 = document.getElementById("itemName1");
 var itemName2 = document.getElementById("itemName2");
 var itemName3 = document.getElementById("itemName3");
 
+var img1 = document.getElementById("img1");
+var img2 = document.getElementById("img2");
+var img3 = document.getElementById("img3");
+
 var itemPrice1 = document.getElementById("itemPrice1");
 var itemPrice2 = document.getElementById("itemPrice2");
 var itemPrice3 = document.getElementById("itemPrice3");
-
 
 
 const putDataMenu = async () => {
@@ -50,17 +53,23 @@ const putDataMenu = async () => {
     // 3. Actualizar HTML
     if (items[0]) {
       itemName1.textContent = items[0].item;
+      var item = itemName1.textContent;
       itemPrice1.textContent = "$ " + items[0].price;
+      putImg(item, 1);
     }
 
     if (items[1]) {
       itemName2.textContent = items[1].item;
+      var item = itemName2.textContent;
       itemPrice2.textContent = "$ " + items[1].price;
+      putImg(item, 2);
     }
 
     if (items[2]) {
       itemName3.textContent = items[2].item;
+      var item = itemName3.textContent;
       itemPrice3.textContent = "$ " + items[2].price;
+      putImg(item, 3);
     }
 
   } catch (error) {
@@ -117,6 +126,14 @@ function total() {
     
     price.textContent = total.toFixed(2);
     console.log("💰 Total del pedido: $" + total.toFixed(2));
+}
+
+function putImg(name, index){
+  var imgElement = document.getElementById("img" + index);
+    if (imgElement) {
+        imgElement.src = `img/item/${name}.png`;
+        imgElement.alt = name;
+    }
 }
 
 window.increasing = increasing;

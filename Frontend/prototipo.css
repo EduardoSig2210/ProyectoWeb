@@ -344,3 +344,34 @@ body {
 .fan-menu:hover .fan-options {
   pointer-events: auto;
 }
+
+.order-summary {
+    background: linear-gradient(135deg, #440200 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.order-summary h5 {
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.order-summary p {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#price {
+    color: #ffd700; /* Dorado */
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
