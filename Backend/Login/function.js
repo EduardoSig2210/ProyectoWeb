@@ -81,7 +81,7 @@ async function checkPassword() {
       color: '#ffffffff',
       confirmButtonColor: 'rgba(255, 0, 0, 1)',
       confirmButtonText: 'Continuar',
-      timer: 2000,
+      timer: 3000,
       timerProgressBar: true
     }).then(() => {
       window.location.href = "Inicio.html";
