@@ -164,8 +164,9 @@ app.get('/api/menu/:restaurant', (req, res) => {
 })
 
 // Iniciar servidor
-app.listen(PORT, () => {
-    console.log(`Servidor de login corriendo en http://localhost:${PORT}`);
+app.listen(PORT, () => {    
+    console.log("DO NOT touch the link")
+    console.log(`Login server running on: http://localhost:${PORT}`);
     console.log(`Endpoints disponibles:`);
     console.log(`POST http://localhost:${PORT}/api/login`);
     console.log(`POST http://localhost:${PORT}/api/usuarios`);
