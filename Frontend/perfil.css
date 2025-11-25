@@ -7,6 +7,15 @@
   --test: #fdf6e3;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding-top: 90px;
+  background: linear-gradient(135deg, #fdf6e3 0%, #f9edd2 100%);
+  min-height: 100vh;
+}
+
 .navbar {
   position: fixed;
   top: 0;
