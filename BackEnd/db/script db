@@ -78,10 +78,10 @@ INSERT INTO Menu (item, price, idRestaurant) VALUES
 ('Baguette Española', 6.95, 4),
 ('Caramel Macchiatto', 5.99, 4);
 
-INSERT INTO Menu (item, price, idRestaurant) VALUES
-('Black Milk Tea', 4.25, 5),
-('Hibiscus Tea', 2.95, 5),
-('Taro Enamorado', 4.95, 5);
+INSERT INTO Menu (item, price, idRestaurant) VALUES -- subway
+('Pollo Pesto', 5.25, 5),
+('BMT Supremo', 5.75, 5),
+('Galleta Choco Chip', 0.80, 5);
 
 INSERT INTO Menu (item, price, idRestaurant) VALUES
 ('Pastel De Chocolate Mediano', 17, 6),
