@@ -7,17 +7,44 @@ async function checkPassword() {
   let checkboxInitial = document.getElementById("checkboxInitial");
 
   if (passwordAsigned1.value != passwordAsigned2.value) {
-    validator2.textContent = "Las contraseñas no coinciden";
+    console.log("Las contraseñas no coinciden");
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Las contraseñas no coinciden',
+      background: '#832525ff',
+      color: '#ffffffff',
+      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonText: 'Entendido'
+    });
     return;
   }
 
   if (!name.value || !lastName.value || !emailAsigned.value || !passwordAsigned1.value) {
     console.log("No puede dejar espacios vacíos");
+    Swal.fire({
+      icon: 'warning',
+      title: 'Campos vacíos',
+      text: 'No puede dejar espacios vacíos',
+      background: '#832525ff',
+      color: '#ffffffff',
+      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonText: 'Entendido'
+    });
     return;
   }
 
   if (!checkboxInitial.checked) {
     console.log("Debe aceptar los términos y condiciones");
+    Swal.fire({
+      icon: 'info',
+      title: 'Términos y condiciones',
+      text: 'Debe aceptar los términos y condiciones',
+      background: '#832525ff',
+      color: '#ffffffff',
+      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonText: 'Entendido'
+    });
     return;
   }
 
@@ -45,13 +72,32 @@ async function checkPassword() {
     localStorage.setItem("lastName", data.lastName || "");
     localStorage.setItem("email", data.email);
 
-    validator2.textContent = "Registro exitoso!";
-    setTimeout(() => {
+    console.log("Registro exitoso!");
+    Swal.fire({
+      icon: 'success',
+      title: '¡Éxito!',
+      text: 'Usuario creado exitosamente',
+      background: '#832525ff',
+      color: '#ffffffff',
+      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonText: 'Continuar',
+      timer: 2000,
+      timerProgressBar: true
+    }).then(() => {
       window.location.href = "Inicio.html";
-    }, 1000);
+    });
 
   } catch (error) {
     console.log(error.message);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error en el registro',
+      text: error.message,
+      background: '#832525ff',
+      color: '#ffffffff',
+      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonText: 'Entendido'
+    });
   }
 }
 
@@ -61,6 +107,15 @@ async function login() {
 
   if (!emailLogin || !passwordLogin) {
     console.log("Email y contraseña son requeridos");
+    Swal.fire({
+      icon: 'warning',
+      title: 'Campos requeridos',
+      text: 'Email y contraseña son requeridos',
+      background: '#832525ff',
+      color: '#ffffffff',
+      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonText: 'Entendido'
+    });
     return;
   }
 
@@ -90,7 +145,19 @@ async function login() {
     localStorage.setItem("lastName", data.user.lastName || "");
 
     console.log("usuario guardado", data.user);
-
+    Swal.fire({
+      icon: 'success',
+      title: '¡Bienvenido!',
+      text: 'Login exitoso',
+      background: '#832525ff',
+      color: '#ffffffff',
+      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonText: 'Continuar',
+      timer: 3000,
+      timerProgressBar: true
+    }).then(() => {
+      window.location.href = "inicio.html";
+    });
     console.log("Login exitoso!");
 
     setTimeout(() => {
@@ -99,6 +166,15 @@ async function login() {
 
   } catch (error) {
     console.log(error.message);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error en el login',
+      text: error.message,
+      background: '#832525ff',
+      color: '#ffffffff',
+      confirmButtonColor: 'rgba(255, 0, 0, 1)',
+      confirmButtonText: 'Reintentar'
+    });
   }
 }
 
