@@ -18,7 +18,7 @@ var itemPrice3 = document.getElementById("itemPrice3");
 
 
 const putDataMenu = async () => {
-  try {
+    try {
     const restaurantData = JSON.parse(localStorage.getItem("restaurantData"));
     
     if (!restaurantData) {

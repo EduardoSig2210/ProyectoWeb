@@ -170,4 +170,7 @@ app.listen(PORT, () => {
     console.log(`POST http://localhost:${PORT}/api/login`);
     console.log(`POST http://localhost:${PORT}/api/usuarios`);
     console.log(`GET  http://localhost:${PORT}/api/usuarios`);
-}); 
+    console.log(`GET  http://localhost:${PORT}/api/restaurant`);
+    console.log(`GET  http://localhost:${PORT}/api/restaurant/Wendys`);
+    console.log(`GET  http://localhost:${PORT}/api/menu/3`);
+});

@@ -22,7 +22,6 @@ async function checkPassword() {
   }
 
   try {
-    // Enviar datos al backend
     const response = await fetch('http://localhost:3000/api/usuarios', {
       method: 'POST',
       headers: {
