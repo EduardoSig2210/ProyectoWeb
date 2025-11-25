@@ -185,7 +185,6 @@ INSERT INTO Menu (item, price, idRestaurant) VALUES -- olive garden
 ('Rosca Vienesa', 6.25, 10);
 
 drop table users; -- por si acaso xd    
-
-DROP TABLE Users; -- por si acaso 
+ 
 SHOW TABLES; -- para ver todas las tablas
 DESCRIBE Users; -- para ver sus columnas
