@@ -1,3 +1,4 @@
+//Espera a que todo esté cargado
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('profile-name')) {
         loadUserProfile();
