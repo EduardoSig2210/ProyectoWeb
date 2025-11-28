@@ -167,11 +167,4 @@ app.get('/api/menu/:restaurant', (req, res) => {
 app.listen(PORT, () => {    
     console.log("DO NOT touch the link")
     console.log(`Login server running on: http://localhost:${PORT}`);
-    console.log(`Endpoints disponibles:`);
-    console.log(`POST http://localhost:${PORT}/api/login`);
-    console.log(`POST http://localhost:${PORT}/api/usuarios`);
-    console.log(`GET  http://localhost:${PORT}/api/usuarios`);
-    console.log(`GET  http://localhost:${PORT}/api/restaurant`);
-    console.log(`GET  http://localhost:${PORT}/api/restaurant/Wendys`);
-    console.log(`GET  http://localhost:${PORT}/api/menu/3`);
 });
