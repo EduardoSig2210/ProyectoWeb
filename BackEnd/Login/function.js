@@ -51,6 +51,7 @@ async function checkPassword() {
     });
     return;
   }
+
   //Enviar datos al servidor
   try {
     const response = await fetch('http://localhost:3000/api/usuarios', {
@@ -71,6 +72,7 @@ async function checkPassword() {
     if (!response.ok) {
       throw new Error(data.error || "Error en el registro");
     }
+
     //Guardar datos en localStorage
     localStorage.setItem("name", data.name);
     localStorage.setItem("lastName", data.lastName || "");
@@ -108,9 +110,11 @@ async function checkPassword() {
 }
 
 async function login() {
+
   //Obtiene email y contraseña
   let emailLogin = document.getElementById("emailInput").value.trim();
   let passwordLogin = document.getElementById("passwordInput").value.trim();
+
   //Validador de campos vacíos
   if (!emailLogin || !passwordLogin) {
     console.log("Email y contraseña son requeridos");
@@ -125,6 +129,7 @@ async function login() {
     });
     return;
   }
+
   //Enviar datos al servidor
   try {
     console.log("enviando datos al servidor...");
@@ -145,6 +150,7 @@ async function login() {
     if (!response.ok) {
       throw new Error(data.error || "Error en el login");
     }
+
     //Guardar datos en localStorage
     localStorage.setItem("userId", data.user.id);
     localStorage.setItem("name", data.user.name);
@@ -164,7 +170,7 @@ async function login() {
       timer: 3000,
       timerProgressBar: true
     }).then(() => {
-      window.location.href = "inicio.html";
+      window.location.href = "restaurantes.html";
     });
     console.log("Login exitoso!");
 
@@ -182,6 +188,7 @@ async function login() {
     });
   }
 }
+
 //Obtienes los datos del usuario almacenados en localStorage
 let user = {
   name: localStorage.getItem("name"),

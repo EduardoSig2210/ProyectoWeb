@@ -1,291 +1,291 @@
-:root {
-  --espresso: #5e3417;
-  --citrine-white: #f9edd2;
-  --temptress: #440200;
-  --wine-berry: #7a2b36;
-  --potters-clay: #e04747;
-  --test: #fdf6e3;
+:root { /* Inicio de variables globales CSS */
+  --espresso: #5e3417; /* Color personalizado espresso */
+  --citrine-white: #f9edd2; /* Color blanco citrino */
+  --temptress: #440200; /* Color tentación (vino oscuro) */
+  --wine-berry: #7a2b36; /* Color vino berry */
+  --potters-clay: #e04747; /* Color terracota rojizo */
+  --test: #fdf6e3; /* Color de prueba */
+} /* Fin de :root */
+
+body { /* Estilos generales del body */
+  font-family: 'Poppins', sans-serif; /* Fuente principal del sitio */
+  color: #333; /* Color del texto */
+  margin: 0; /* Eliminar margen predeterminado */
+  padding-top: 90px; /* Espacio superior para evitar solaparse con navbar fija */
+  background: linear-gradient(135deg, #fdf6e3 0%, #f9edd2 100%); /* Fondo degradado */
+  min-height: 100vh; /* Altura minima de toda la pantalla */
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  margin: 0;
-  padding-top: 90px;
-  background: linear-gradient(135deg, #fdf6e3 0%, #f9edd2 100%);
-  min-height: 100vh;
+.navbar { /* Barra superior fija */
+  position: fixed; /* Mantener fija arriba */
+  top: 0; /* Ubicada al borde superior */
+  width: 100%; /* Abarcar ancho completo */
+  background: var(--wine-berry); /* Fondo con color vino */
+  padding: 15px 0; /* Espaciado vertical */
+  z-index: 10; /* Mantener encima de otros elementos */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4); /* Sombra inferior */
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--wine-berry);
-  padding: 15px 0;
-  z-index: 10;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+.logo { /* Logo del navbar */
+  width: 160px; /* Ancho fijo */
+  height: auto; /* Altura proporcional */
 }
 
-.logo {
-  width: 160px;
-  height: auto;
+.user-actions a { /* Iconos de acciones de usuario (navbar) */
+  color: var(--citrine-white); /* Color claro */
+  margin-left: 15px; /* Separacion entre iconos */
+  font-size: 1.3rem; /* Tamaño del icono/texto */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animacion suave */
 }
 
-.user-actions a {
-  color: var(--citrine-white);
-  margin-left: 15px;
-  font-size: 1.3rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+.user-actions a:hover { /* Efecto hover de acciones */
+  transform: scale(1.2); /* Aumentar tamaño */
+  color: var(--potters-clay); /* Cambiar color */
 }
 
-.user-actions a:hover {
-  transform: scale(1.2);
-  color: var(--potters-clay);
+.action-item { /* Contenedor de acciones con dropdown */
+  position: relative; /* Necesario para posicionar menu */
+  margin-left: 20px; /* Separacion */
+  cursor: pointer; /* Mostrar mano al pasar */
 }
 
-.action-item {
-  position: relative;
-  margin-left: 20px;
-  cursor: pointer;
+.action-item i { /* Icono dentro de accion */
+  font-size: 1.5rem; /* Tamaño del icono */
+  color: var(--citrine-white); /* Color claro */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animacion suave */
 }
 
-.action-item i {
-  font-size: 1.5rem;
-  color: var(--citrine-white);
-  transition: transform 0.3s ease, color 0.3s ease;
+.action-item i:hover { /* Hover del icono */
+  transform: scale(1.2); /* Agrandar */
+  color: var(--potters-clay); /* Cambiar color */
 }
 
-.action-item i:hover {
-  transform: scale(1.2);
-  color: var(--potters-clay);
+.action-item:hover .dropdown-menu { /* Mostrar menu cuando se pasa encima */
+  display: block; /* Hacer visible */
 }
 
-.action-item:hover .dropdown-menu {
-  display: block;
+.dropdown-menu { /* Estilo del menu flotante */
+  position: absolute; /* Posicion absoluta respecto al contenedor */
+  top: 35px; /* Debajo del icono */
+  right: 0; /* Alineado a la derecha */
+  background: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+  color: var(--temptress); /* Color de texto */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* Sombra */
+  display: none; /* Oculto por defecto */
+  min-width: 140px; /* Ancho minimo */
+  animation: fadeDown 0.25s ease; /* Animacion de aparicion */
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 35px;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--temptress);
-  padding: 10px 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  display: none;
-  min-width: 140px;
-  animation: fadeDown 0.25s ease;
+.dropdown-menu a { /* Opciones del menu */
+  display: block; /* Cada opción ocupa una linea */
+  margin: 8px 0; /* Separacion entre opciones */
+  font-size: 0.9rem; /* Tamaño del texto */
+  cursor: pointer; /* Mostrar mano */
+  transition: 0.3s; /* Transicion suave */
+  color: #440200; /* Color de texto */
+  text-decoration: none; /* Sin subrayado */
 }
 
-.dropdown-menu a {
-  display: block;
-  margin: 8px 0;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: 0.3s;
-  color: #440200;
-  text-decoration: none;
+.dropdown-menu a:hover { /* Efecto hover */
+  color: var(--wine-berry); /* Cambiar color */
+  transform: translateX(4px); /* Mover ligeramente a la derecha */
 }
 
-.dropdown-menu a:hover {
-  color: var(--wine-berry);
-  transform: translateX(4px);
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+@keyframes fadeDown { /* Animacion del dropdown */
+  from { /* Estado inicial */
+    opacity: 0; /* Invisible */
+    transform: translateY(-10px); /* Arriba */
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  to { /* Estado final */
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Posicion normal */
   }
 }
 
-.profile-container {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  margin-bottom: 40px;
+.profile-container { /* Contenedor principal del perfil */
+  background: white; /* Fondo blanco */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 40px; /* Espaciado interno */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1); /* Sombra suave */
+  margin-bottom: 40px; /* Separacion inferior */
 }
 
-.profile-photo-section {
-  padding: 30px 20px;
+.profile-photo-section { /* Seccion de foto del usuario */
+  padding: 30px 20px; /* Espaciado */
 }
 
-.profile-photo {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--wine-berry), var(--potters-clay));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(122, 43, 54, 0.3);
-  transition: transform 0.3s ease;
+.profile-photo { /* Marco circular de la foto */
+  width: 200px; /* Ancho */
+  height: 200px; /* Alto */
+  margin: 0 auto; /* Centrar */
+  border-radius: 50%; /* Forma circular */
+  background: linear-gradient(135deg, var(--wine-berry), var(--potters-clay)); /* Degradado */
+  display: flex; /* Centrado flexible */
+  align-items: center; /* Centrar vertical */
+  justify-content: center; /* Centrar horizontal */
+  box-shadow: 0 8px 20px rgba(122, 43, 54, 0.3); /* Sombra */
+  transition: transform 0.3s ease; /* Animacion */
 }
 
-.profile-photo:hover {
-  transform: scale(1.05);
+.profile-photo:hover { /* Hover sobre el circulo de foto */
+  transform: scale(1.05); /* Aumentar tamaño */
 }
 
-.profile-photo i {
-  font-size: 120px;
-  color: white;
+.profile-photo i { /* Icono dentro del circulo */
+  font-size: 120px; /* Tamaño del ícono */
+  color: white; /* Blanco */
 }
 
-#profile-fullname {
-  color: var(--wine-berry);
-  font-weight: 700;
-  margin-top: 20px;
-  font-size: 1.5rem;
+#profile-fullname { /* Estilo del nombre del usuario */
+  color: var(--wine-berry); /* Texto vino */
+  font-weight: 700; /* Negrita fuerte */
+  margin-top: 20px; /* Separación superior */
+  font-size: 1.5rem; /* Tamaño grande */
 }
 
-#profile-email-small {
-  color: #666;
-  font-size: 0.9rem;
+#profile-email-small { /* Correo debajo del nombre */
+  color: #666; /* Gris oscuro */
+  font-size: 0.9rem; /* Tamaño pequeño */
 }
 
-.btn-edit {
-  background: var(--wine-berry);
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.btn-edit { /* Boton editar perfil */
+  background: var(--wine-berry); /* Fondo vino */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 25px; /* Relleno */
+  border-radius: 25px; /* Bordes redondeados */
+  font-weight: 600; /* Texto marcado */
+  transition: all 0.3s ease; /* Animacion */
 }
 
-.btn-edit:hover {
-  background: var(--potters-clay);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(224, 71, 71, 0.3);
+.btn-edit:hover { /* Hover boton editar */
+  background: var(--potters-clay); /* Cambiar color */
+  transform: translateY(-2px); /* Elevar ligeramente */
+  box-shadow: 0 4px 12px rgba(224, 71, 71, 0.3); /* Sombra */
 }
 
-.profile-info-section {
-  padding: 20px;
+.profile-info-section { /* Seccion de info del usuario */
+  padding: 20px; /* Espaciado */
 }
 
-.section-title {
-  color: var(--wine-berry);
-  font-weight: 700;
-  margin-bottom: 30px;
-  font-size: 1.8rem;
-  border-bottom: 3px solid var(--potters-clay);
-  padding-bottom: 10px;
+.section-title { /* Titulo de secciones */
+  color: var(--wine-berry); /* Color vino */
+  font-weight: 700; /* Negrita */
+  margin-bottom: 30px; /* Separación inferior */
+  font-size: 1.8rem; /* Grande */
+  border-bottom: 3px solid var(--potters-clay); /* Linea inferior */
+  padding-bottom: 10px; /* Separar texto de la linea */
 }
 
-.info-card {
-  background: #fdf6e3;
-  border-radius: 15px;
-  padding: 30px;
-  margin-bottom: 20px;
+.info-card { /* Tarjeta de datos */
+  background: #fdf6e3; /* Fondo claro */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 30px; /* Espaciado interno */
+  margin-bottom: 20px; /* Separacion entre tarjetas */
 }
 
-.info-item {
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #e0e0e0;
+.info-item { /* Campo individual de info */
+  margin-bottom: 25px; /* Separacion */
+  padding-bottom: 15px; /* Relleno inferior */
+  border-bottom: 1px solid #e0e0e0; /* Línea de division */
 }
 
-.info-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
+.info-item:last-child { /* ultimo campo */
+  border-bottom: none; /* Quitar línea */
+  margin-bottom: 0; /* Sin margen */
 }
 
-.info-item label {
-  display: block;
-  color: var(--wine-berry);
-  font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
+.info-item label { /* Etiquetas */
+  display: block; /* Forzar linea */
+  color: var(--wine-berry); /* Color vino */
+  font-weight: 600; /* Negrita */
+  margin-bottom: 8px; /* Separacion */
+  font-size: 0.9rem; /* Tamaño */
 }
 
-.info-item label i {
-  margin-right: 8px;
-  color: var(--potters-clay);
+.info-item label i { /* Icono dentro de etiqueta */
+  margin-right: 8px; /* Espacio a la derecha */
+  color: var(--potters-clay); /* Color terracota */
 }
 
-.info-item p {
-  color: #333;
-  font-size: 1.1rem;
-  margin: 0;
-  font-weight: 500;
+.info-item p { /* Texto del valor */
+  color: #333; /* Gris oscuro */
+  font-size: 1.1rem; /* Tamaño mas grande */
+  margin: 0; /* Sin margen */
+  font-weight: 500; /* Seminegrita */
 }
 
-.profile-actions {
-  display: flex;
-  gap: 15px;
+.profile-actions { /* Contenedor de botones */
+  display: flex; /* Distribución horizontal */
+  gap: 15px; /* Separacion entre botones */
 }
 
-.btn-primary-custom {
-  background: var(--wine-berry);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.btn-primary-custom { /* Boton principal */
+  background: var(--wine-berry); /* Fondo vino */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 12px 30px; /* Relleno */
+  border-radius: 25px; /* Bordes redondeados */
+  font-weight: 600; /* Negrita */
+  transition: all 0.3s ease; /* Animacion */
 }
 
-.btn-primary-custom:hover {
-  background: var(--potters-clay);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(224, 71, 71, 0.3);
+.btn-primary-custom:hover { /* Hover boton principal */
+  background: var(--potters-clay); /* Cambiar color */
+  transform: translateY(-2px); /* Elevar */
+  box-shadow: 0 4px 12px rgba(224, 71, 71, 0.3); /* Sombra */
 }
 
-.btn-secondary-custom {
-  background: #6c757d;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.btn-secondary-custom { /* Boton secundario */
+  background: #6c757d; /* Gris */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 12px 30px; /* Tamaño */
+  border-radius: 25px; /* Bordes redondeados */
+  font-weight: 600; /* Negrita */
+  transition: all 0.3s ease; /* Animacion */
 }
 
-.btn-secondary-custom:hover {
-  background: #5a6268;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+.btn-secondary-custom:hover { /* Hover boton secundario */
+  background: #5a6268; /* Gris mas oscuro */
+  transform: translateY(-2px); /* Elevar */
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3); /* Sombra */
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: var(--wine-berry);
-  color: var(--citrine-white);
-  font-size: 0.9rem;
+footer { /* Pie de pagina */
+  text-align: center; /* Centrar contenido */
+  padding: 20px; /* Espaciado */
+  background: var(--wine-berry); /* Fondo vino */
+  color: var(--citrine-white); /* Texto claro */
+  font-size: 0.9rem; /* Tamaño pequeño */
 }
 
-.logo-section {
-  text-align: center;
+.logo-section { /* Seccion donde va el logo */
+  text-align: center; /* Centrado */
 }
 
-@media (max-width: 768px) {
-  .profile-container {
-    padding: 20px;
+@media (max-width: 768px) { /* Estilos responsive */
+  .profile-container { /* Ajustar contenedor */
+    padding: 20px; /* Reducir padding */
   }
   
-  .profile-photo {
+  .profile-photo { /* Foto mAs pequeña */
     width: 150px;
     height: 150px;
   }
   
-  .profile-photo i {
+  .profile-photo i { /* Icono mAs pequeño */
     font-size: 90px;
   }
   
-  .profile-actions {
+  .profile-actions { /* Botones en columna */
     flex-direction: column;
   }
   
   .btn-primary-custom,
   .btn-secondary-custom {
-    width: 100%;
+    width: 100%; /* Botones a ancho completo */
   }
 }
