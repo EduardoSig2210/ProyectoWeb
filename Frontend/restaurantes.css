@@ -1,3 +1,4 @@
+/* Define variables globales de colores */
 :root {
   --espresso: #5e3417;
   --citrine-white: #f9edd2;
@@ -8,152 +9,146 @@
 }
 
 /* General */
-body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--citrine-white);
-  margin: 0;
-  padding-top: 90px;
-  background: linear-gradient(160deg, var(--temptress) 10%, var(--test) 40%, var(--citrine-white) 80%);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
+body {                                            /* Estilos generales del cuerpo de la pagina */
+  font-family: 'Poppins', sans-serif;             /* Define la fuente principal */
+  color: var(--citrine-white);                    /* Color de texto usando variable */
+  margin: 0;                                      /* Quita margenes predeterminados */
+  padding-top: 90px;                              /* Deja espacio arriba (por navbar fija) */
+  background: linear-gradient(160deg, var(--temptress) 10%, var(--test) 40%, var(--citrine-white) 80%); /* Fondo degradado */
+  background-size: 400% 400%;                     /* Hace el degradado mas grande para animarlo */
+  animation: gradientMove 15s ease infinite;      /* Aplica animacion del fondo */
 }
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes gradientMove {                         /* Animacion para mover el fondo */
+  0% { background-position: 0% 50%; }             /* Inicio: posicion del fondo */
+  50% { background-position: 100% 50%; }          /* Mitad: mueve hacia la derecha */
+  100% { background-position: 0% 50%; }           /* Final: regresa al inicio */
 }
 
 /* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--wine-berry);
-  padding: 15px 0;
-  z-index: 10;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+.navbar {                                         /* Estilos para la barra superior */
+  position: fixed;                                /* Fija la barra en la parte superior */
+  top: 0;                                         /* La coloca en el top exacto */
+  width: 100%;                                    /* Ocupa todo el ancho */
+  background: var(--wine-berry);                  /* Color de fondo */
+  padding: 15px 0;                                /* Espaciado interior */
+  z-index: 10;                                    /* Se coloca encima del resto */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);         /* Sombra debajo de la barra */
 }
 
-.logo {
-  width: 160px;
-  height: auto;
+.logo {                                           /* Estilos para el logo */
+  width: 160px;                                   /* Ancho del logo */
+  height: auto;                                   /* Altura proporcional */
 }
 
 /* Barra de busqueda */
-.search-bar {
-  display: flex;
-  align-items: center;
-  background: transparent; 
-  border-radius: 30px;
-  border: 2px solid #ffffff;
-  padding: 5px 10px;
+.search-bar {                                     /* Contenedor de la barra de busqueda */
+  display: flex;                                  /* Alinea elementos en fila */
+  align-items: center;                            /* Centra verticalmente */
+  background: transparent;                        /* Fondo transparente */
+  border-radius: 30px;                            /* Bordes redondeados */
+  border: 2px solid #ffffff;                      /* Borde blanco */
+  padding: 5px 10px;                              /* Espaciado interior */
 }
 
-.search-bar input {
-  border: none;
-  background: transparent;
-  color: var(--citrine-white);
-  padding: 8px;
-  outline: none;
-  width: 250px;
+.search-bar input {                               /* Estilos del input de busqueda */
+  border: none;                                   /* Quita borde */
+  background: transparent;                        /* Fondo transparente */
+  color: var(--citrine-white);                    /* Texto blanco */
+  padding: 8px;                                   /* Espacio interno */
+  outline: none;                                  /* Quita borde al hacer click */
+  width: 250px;                                   /* Ancho del input */
 }
 
-.search-bar input::placeholder {
-  color: #dbd8c5;
-  opacity: 1;
+.search-bar input::placeholder {                  /* Estilo del texto placeholder */
+  color: #dbd8c5;                                 /* Color gris claro */
+  opacity: 1;                                     /* Hace visible el placeholder */
 }
 
-.search-bar button {
-  background: var(--wine-berry);
-  border: none;
-  border-radius: 50%;
-  padding: 8px 10px;
-  color: var(--citrine-white);
-  cursor: pointer;
-  transition: background 0.3s ease;
+.search-bar button {                              /* Boton del buscador */
+  background: var(--wine-berry);                  /* Fondo color vino */
+  border: none;                                   /* Quita borde */
+  border-radius: 50%;                             /* Hace el boton circular */
+  padding: 8px 10px;                              /* Espaciado */
+  color: var(--citrine-white);                    /* Color del icono */
+  cursor: pointer;                                /* Cambia cursor */
+  transition: background 0.3s ease;               /* Animacion al hover */
 }
 
-.search-bar button:hover {
-  background: var(--potters-clay);
+.search-bar button:hover {                        /* Animacion al pasar el mouse */
+  background: var(--potters-clay);                /* Cambia color */
 }
 
 /* Iconos usuario */
-.user-actions a {
-  color: var(--citrine-white);
-  margin-left: 15px;
-  font-size: 1.3rem;
+.user-actions a {                                 /* Estilos genericos de iconos usuario */
+  color: var(--citrine-white);                    /* Color blanco */
+  margin-left: 15px;                              /* Separacion entre iconos */
+  font-size: 1.3rem;                              /* Tamaño del icono */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animacion suave */
+}
+.user-actions a:hover {                           /* Efecto hover */
+  transform: scale(1.2);                          /* Hace el icono mas grande */
+  color: var(--potters-clay);                     /* Cambia color */
+}
+
+.action-item {                                    /* Contenedor de cada icono con menu */
+  position: relative;                              /* Necesario para ubicar menu desplegable */
+  margin-left: 20px;                               /* Separacion */
+  cursor: pointer;                                 /* Cursor de mano */
+}
+
+.action-item i {                                  /* Icono individual */
+  font-size: 1.5rem;                              /* Tamaño del icono */
+  color: var(--citrine-white);                    /* Color blanco */
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.user-actions a:hover {
+.action-item i:hover {                            /* Animacion al pasar mouse */
   transform: scale(1.2);
   color: var(--potters-clay);
 }
 
-.action-item {
-  position: relative;
-  margin-left: 20px;
-  cursor: pointer;
-
+.dropdown-menu {                                  /* Caja del menu desplegable */
+  position: absolute;                             /* Posicion absoluta bajo el icono */
+  top: 35px;                                      /* Distancia hacia abajo */
+  right: 0;                                       /* Pegado a la derecha */
+  background: rgba(255, 255, 255, 0.95);          /* Fondo blanco semi */
+  color: var(--temptress);                        /* Color de texto oscuro */
+  padding: 10px 15px;                             /* Espaciado interior */
+  border-radius: 12px;                            /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);        /* Sombra */
+  display: none;                                  /* Oculto por defecto */
+  min-width: 140px;                               /* Ancho minimo */
+  animation: fadeDown 0.25s ease;                 /* Animacion al aparecer */
 }
-
-.action-item i {
-  font-size: 1.5rem;
-  color: var(--citrine-white);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.action-item i:hover {
-  transform: scale(1.2);
-  color: var(--potters-clay);
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 35px;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--temptress);
-  padding: 10px 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  display: none;
-  min-width: 140px;
-  animation: fadeDown 0.25s ease;
-}
-
-.dropdown-menu a {
+.dropdown-menu p {                                /* Elementos del menu */
   margin: 8px 0;
   font-size: 0.9rem;
   cursor: pointer;
   transition: 0.3s;
-  color: #440200;
-  text-decoration: none;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu p:hover {                          /* Hover en opciones */
   color: var(--wine-berry);
   transform: translateX(4px);
 }
 
-@keyframes fadeDown {
+@keyframes fadeDown {                             /* Animacion del dropdown */
   from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.Menu_lateral {
-  width: 90px;
-  height: auto; 
-  min-height: 100px; 
+.Menu_lateral {                                   /* Menu lateral izquierdo */
+  width: 90px;                                    /* Ancho del menu */
+  height: auto;
+  min-height: 100px;
   background: var(--wine-berry);
-  display: flex;
-  flex-direction: column; 
+  display: flex;                                  /* Alinea vertical */
+  flex-direction: column;
   align-items: center;
-  padding-top: 10px; 
+  padding-top: 10px;
 }
 
-.icon {
+.icon {                                           /* Iconos dentro del menu lateral */
   width: 40px;
   margin: 15px;
   cursor: pointer;
@@ -161,164 +156,162 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.icon:hover {
+.icon:hover {                                     /* Efecto hover iconos */
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* Zona principal */
-.main {
-  display: flex;
+.main {                                           /* Contenedor principal */
+  display: flex;                                  /* Alinea menu + contenido en fila */
   flex-direction: row;
 }
 
-.content-area {
-  margin-left: 110px;
+.content-area {                                   /* Zona de contenido */
+  margin-left: 110px;                             /* Deja espacio para el menu lateral */
   padding: 30px;
 }
 
-/* Categorias */
-.categories {
-  text-align: center;
-  margin-top: 30px;
-}
+ /* Categorias */ 
+.categories { /* Contenedor de la seccion de categorias */ 
+  text-align: center; /* Centra el texto */ 
+  margin-top: 30px; /* Margen superior */ 
+} /* Fin categories */
 
-.categories h2 {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 2rem;
-  color: #4d1616; 
-}
+.categories h2 { /* Estilo del titulo de categorias */ 
+  font-weight: 700; /* Negrita fuerte */ 
+  margin-bottom: 15px; /* Separacion debajo del titulo */ 
+  font-size: 2rem; /* Tamaño grande del titulo */ 
+  color: #4d1616; /* Color especifico para el titulo */ 
+} /* Fin h2 */
 
-.category-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
+.category-list { /* Contenedor de botones de categoria */ 
+  display: flex; /* Usa flex para alinear botones */ 
+  justify-content: center; /* Centra los botones horizontalmente */ 
+  flex-wrap: wrap; /* Permite que los botones salten a la siguiente linea */ 
+  gap: 15px; /* Espacio entre botones */ 
+} /* Fin category-list */
 
-.category-list button {
-  background: var(--wine-berry);
-  border: none;
-  color: var(--citrine-white);
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
+.category-list button { /* Estilo de los botones de categoria */ 
+  background: var(--wine-berry); /* Fondo wine-berry */ 
+  border: none; /* Sin borde */ 
+  color: var(--citrine-white); /* Texto blanco */ 
+  padding: 10px 20px; /* Espaciado interno */ 
+  border-radius: 20px; /* Bordes redondeados */ 
+  cursor: pointer; /* Cursor pointer */ 
+  transition: transform 0.3s ease, background 0.3s ease; /* Transicion suave */ 
+} /* Fin button categoria */
 
-.category-list button:hover {
-  transform: translateY(-4px) scale(1.05);
-  background: var(--potters-clay);
-}
+.category-list button:hover { /* Hover en botones de categoria */ 
+  transform: translateY(-4px) scale(1.05); /* Se eleva y escala ligeramente */ 
+  background: var(--potters-clay); /* Cambia color de fondo */ 
+} /* Fin hover categoria */
 
-/* Restaurantes */
-.restaurants {
-  text-align: center;
-  margin-top: 30px; 
-  padding: 0; 
-  border-left: 5px solid var(--wine-berry); 
-  background: transparent; 
-}
+ /* Restaurantes */ 
+.restaurants { /* Contenedor de la seccion de restaurantes */ 
+  text-align: center; /* Centra contenido */ 
+  margin-top: 30px; /* Margen superior */ 
+  padding: 0; /* Sin padding extra */ 
+  border-left: 5px solid var(--wine-berry); /* Borde lateral izquierdo decorativo */ 
+  background: transparent; /* Fondo transparente */ 
+} /* Fin restaurants */
 
-.restaurant-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 20px;
-}
+.restaurant-grid { /* Contenedor tipo grid para las tarjetas */ 
+  display: flex; /* Usa flex para organizar tarjetas */ 
+  flex-wrap: wrap; /* Permite varias filas */ 
+  justify-content: flex-start; /* Alinea las tarjetas al inicio */ 
+  gap: 20px; /* Separacion entre tarjetas */ 
+} /* Fin restaurant-grid */
 
-.restaurant-card {
-  background: var(--citrine-white); 
-  color: var(--temptress);
-  border-radius: 15px;
-  padding: 20px;
-  width: 250px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
+.restaurant-card { /* Estilo de cada tarjeta de restaurante */ 
+  background: var(--citrine-white); /* Fondo claro para la tarjeta */ 
+  color: var(--temptress); /* Color del texto oscuro */ 
+  border-radius: 15px; /* Bordes redondeados */ 
+  padding: 20px; /* Espaciado interno */ 
+  width: 250px; /* Ancho fijo de la tarjeta */ 
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3); /* Sombra suave */ 
+  transition: transform 0.3s ease; /* Transicion al hover */ 
+} /* Fin restaurant-card */
 
-.restaurant-card:hover {
-  transform: scale(1.03);
-}
+.restaurant-card:hover { /* Hover en la tarjeta */ 
+  transform: scale(1.03); /* Escala levemente la tarjeta */ 
+} /* Fin hover tarjeta */
 
-.restaurant-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
+.restaurant-card img { /* Estilo de la imagen dentro de la tarjeta */ 
+  width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */ 
+  border-radius: 10px; /* Bordes redondeados en la imagen */ 
+  margin-bottom: 15px; /* Separacion debajo de la imagen */ 
+} /* Fin img */
 
-.restaurant-card h3 {
-  color: var(--wine-berry);
-  font-weight: 700;
-}
+.restaurant-card h3 { /* Estilo del nombre del restaurante */ 
+  color: var(--wine-berry); /* Color del titulo */ 
+  font-weight: 700; /* Negrita */ 
+} /* Fin h3 */
 
-.restaurant-card p {
-  color: var(--espresso);
-  margin-bottom: 15px;
-}
+.restaurant-card p { /* Estilo del parrafo descriptivo */ 
+  color: var(--espresso); /* Color espresso para el texto */ 
+  margin-bottom: 15px; /* Margen inferior */ 
+} /* Fin p */
 
-.restaurant-card button {
-  background: var(--wine-berry);
-  border: none;
-  color: var(--citrine-white);
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+.restaurant-card button { /* Boton dentro de la tarjeta */ 
+  background: var(--wine-berry); /* Fondo wine-berry */ 
+  border: none; /* Sin borde */ 
+  color: var(--citrine-white); /* Texto blanco */ 
+  padding: 10px 20px; /* Espaciado interno */ 
+  border-radius: 20px; /* Bordes redondeados */ 
+  cursor: pointer; /* Cursor pointer */ 
+  transition: 0.3s ease; /* Transicion para hover */ 
+} /* Fin boton tarjeta */
 
-.restaurant-card button:hover {
-  background: var(--potters-clay);
-  transform: scale(1.05);
-}
-
-/* Estilo de las estrellas */
-.rating {
-  color: #fbc02d;
-  font-size: 0.9rem;
-  margin: 8px 0;
-  letter-spacing: 3px;
-  text-shadow: 0 0 4px rgba(0,0,0,0.25);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.restaurant-card:hover .rating {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-.no-encontrado {
-  background: rgba(122, 43, 54, 0.15);  
-  color: var(--wine-berry);
-  border: 1.5px solid rgba(255, 223, 200, 0.9); 
-  border-radius: 18px;
-  padding: 12px 28px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  width: fit-content;
-  margin: 35px auto;
-  letter-spacing: 0.8px; 
-  text-transform: uppercase;
-  backdrop-filter: blur(4px); 
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-  animation: appearSoft 0.45s ease-out;
-}
-
-/* Animacion de entrada suave */
-@keyframes appearSoft {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(122, 43, 54, 0.8);
-  font-size: 0.9rem;
-}
+.restaurant-card button:hover { /* Hover del boton de la tarjeta */ 
+  background: var(--potters-clay); /* Cambia a color potters-clay */ 
+  transform: scale(1.05); /* Escala el boton */ 
+} /* Fin hover boton */
 
 
+/* Estilo de las estrellas */ 
+.rating { /* Contenedor de las estrellas de calificacion */ 
+  color: #fbc02d; /* Color dorado para las estrellas */ 
+  font-size: 0.9rem; /* Tamaño del texto */ 
+  margin: 8px 0; /* Margen vertical */ 
+  letter-spacing: 3px; /* Espacio entre caracteres */ 
+  text-shadow: 0 0 4px rgba(0,0,0,0.25); /* Sombra suave en texto */ 
+  display: flex; /* Centra el contenido */ 
+  justify-content: center; /* Centrado horizontal */ 
+  align-items: center; /* Centrado vertical */ 
+} /* Fin rating */
+
+.restaurant-card:hover .rating { /* Efecto en rating cuando la tarjeta se hoverea */ 
+  transform: scale(1.05); /* Escala levemente las estrellas */ 
+  transition: transform 0.3s ease; /* Transicion suave */ 
+} /* Fin efecto rating */
+
+.no-encontrado { /* Estilo del mensaje cuando no hay resultados */ 
+  background: rgba(122, 43, 54, 0.15); /* Fondo semitransparente */ 
+  color: var(--wine-berry); /* Color del texto */ 
+  border: 1.5px solid rgba(255, 223, 200, 0.9); /* Borde sutil */ 
+  border-radius: 18px; /* Bordes redondeados */ 
+  padding: 12px 28px; /* Espaciado interno */ 
+  font-size: 1.25rem; /* Tamaño de fuente mayor */ 
+  font-weight: 600; /* Peso de fuente semi-negrita */ 
+  width: fit-content; /* Ajusta el ancho al contenido */ 
+  margin: 35px auto; /* Centra el elemento con margen vertical */ 
+  letter-spacing: 0.8px; /* Espaciado entre letras */ 
+  text-transform: uppercase; /* Texto en mayusculas */ 
+  backdrop-filter: blur(4px); /* Desenfoque del fondo detras del elemento */ 
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18); /* Sombra para profundidad */ 
+  animation: appearSoft 0.45s ease-out; /* Animacion de aparicion suave */ 
+} /* Fin no-encontrado */
+
+@keyframes appearSoft { /* Animacion suave de entrada */ 
+  from { opacity: 0; transform: translateY(-6px); } /* Empieza invisible y levemente arriba */ 
+  to { opacity: 1; transform: translateY(0); } /* Termina visible en su posicion */ 
+} /* Fin keyframes appearSoft */
+
+ /* Footer */ 
+footer { /* Estilo del pie de pagina */ 
+  text-align: center; /* Centra el texto */ 
+  padding: 20px; /* Espaciado interno */ 
+  background: rgba(122, 43, 54, 0.8); /* Fondo semitransparente oscuro */ 
+  font-size: 0.9rem; /* Tamaño de fuente */ 
+} /* Fin footer */

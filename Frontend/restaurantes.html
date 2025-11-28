@@ -2,44 +2,43 @@
 <html lang="es">
   <head>
     <script
-      type="module"
-      src="../BackEnd/MainMenu/matrixRestaurant.js"
-      defer
+      type="module" 
+      src="../BackEnd/MainMenu/matrixRestaurant.js" 
+      defer 
     ></script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" /> <!-- Permite caracteres especiales como ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Ajusta la pagina a dispositivos moviles -->
     <title>Foodi’n Line - Restaurantes</title>
-    <link rel="icon" href="img/MotoAzulLogo.png" type="image/png" />
+    <link rel="icon" href="img/MotoAzulLogo.png" type="image/png" /><!-- Icono de la pestana del navegador -->
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts, carga la fuente Poppins -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Bootstrap -->
+    <!-- inicio de estilo Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Iconos -->
+    <!-- seccion de iconos -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
 
-    <!-- CSS personalizado -->
+    <!--cargar  estilo CSS personalizado -->
     <link rel="stylesheet" href="restaurantes.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
-    <!-- Encabezado principal -->
+   <!-- Encabezado con estilo de barra de navegacion -->
     <header class="navbar">
-      <div class="container d-flex justify-content-between align-items-center">
-        <div class="logo-section d-flex align-items-center">
+      <div class="container d-flex justify-content-between align-items-center"><!-- Contenedor centrado con Flexbox -->
+        <div class="logo-section d-flex align-items-center"><!-- Seccion del logo -->
+
           <img
             src="img/Logo_Header_Letras_Blancas.png"
             alt="Logo Foodi’n Line"
@@ -54,39 +53,39 @@
             id="buscarRestaurante"
             placeholder="Buscar restaurantes o platos"
           />
-          <button><i class="bi bi-search"></i></button>
+          <button><i class="bi bi-search"></i></button><!-- Boton con icono de lupa -->
         </div>
 
-        <div class="user-actions d-flex align-items-center">
-          <div class="action-item">
-            <i class="bi bi-bell-fill"></i>
-            <div class="dropdown-menu">
+        <div class="user-actions d-flex align-items-center"><!-- Seccion de iconos del usuario -->
+          <div class="action-item"><!-- Item individual -->
+            <i class="bi bi-bell-fill"></i><!-- Icono de campana -->
+            <div class="dropdown-menu"><!-- Menu desplegable -->
               <p>Notificaciones</p>
             </div>
           </div>
 
-          <div class="action-item">
-            <i class="bi bi-chat-dots-fill"></i>
-            <div class="dropdown-menu">
+          <div class="action-item"><!-- Segundo item -->
+            <i class="bi bi-chat-dots-fill"></i><!-- Icono de chat -->
+            <div class="dropdown-menu"><!-- Menu desplegable -->
               <p>Añadir comentario</p>
               <p>Mensajes nuevos</p>
             </div>
           </div>
 
-          <div class="action-item">
-            <i class="bi bi-cart-fill"></i>
+          <div class="action-item"><!-- Tercer item -->
+            <i class="bi bi-cart-fill"></i><!-- Icono del carrito -->
             <div class="dropdown-menu">
               <p>Ver Carrito</p>
               <p>Pedidos anteriores</p>
             </div>
           </div>
 
-          <div class="action-item">
-            <i class="bi bi-person-circle"></i>
+          <div class="action-item"><!-- Cuarto item -->
+            <i class="bi bi-person-circle"></i> <!-- Icono del usuario -->
             <div class="dropdown-menu">
-              <a href="Perfil.html">Mi Perfil</a>
-              <a>Configuración</a>
-              <a href="Inicio.html">Cerrar sesion</a>
+              <p>Mi Perfil</p>
+              <p>Configuración</p>
+              <p>Cerrar Sesión</p>
             </div>
           </div>
         </div>
@@ -117,8 +116,8 @@
         </section>
 
         <!-- Restaurantes destacados -->
-        <section class="restaurants">
-          <div class="restaurant-grid">
+        <section class="restaurants"><!-- Seccion que contiene las tarjetas -->
+          <div class="restaurant-grid"><!-- Disposicion en forma de cuadricula -->
             <div class="restaurant-card" data-category="comida-rapida" id="Papa Johns">
               <img src="img/papa_johns.png" alt="Papa John's" />
               <h3>Papa John's</h3>
@@ -136,11 +135,11 @@
             </div>
 
             <div class="restaurant-card" data-category="comida-rapida" id="Zepped">
-              <img src="img/Zepped.png" alt="Zepped">
+              <img src="img/Zepped.jpg" alt="Zepped">
               <h3>Zepped</h3>
               <div class="rating">⭐⭐⭐⭐⭐</div>
               <p>Deliciosos hot dogs, hamburguesas y más</p>
-              <button onclick="menuView(this)">Ver menú</button>
+              <button onclick="menuView()">Ver menú</button>
             </div>
 
             <div class="restaurant-card" data-category="postres" id="San Martin">
@@ -175,7 +174,7 @@
               <button onclick="menuView(this)">Ver menú</button>
             </div>
 
-            <div class="restaurant-card" data-category="postres" id="Ban Ban">
+            <div class="restaurant-card" data-category="postres" id="Ban_Ban">
               <img src="img/ban_ban.png" alt="Ban Ban" />
               <h3>Ban Ban</h3>
               <div class="rating">⭐⭐⭐☆☆</div>
@@ -183,11 +182,7 @@
               <button onclick="menuView(this)">Ver menú</button>
             </div>
 
-            <div
-              class="restaurant-card"
-              data-category="saludable"
-              id="Olive Garden"
-            >
+            <div class="restaurant-card" data-category="saludable" id="Olive_Garden">
               <img src="img/olive_garden.png" alt="Olive Garden" />
               <h3>Olive Garden</h3>
               <div class="rating">⭐⭐⭐⭐☆</div>
@@ -213,4 +208,3 @@
     </div>
   </body>
 </html>
-
