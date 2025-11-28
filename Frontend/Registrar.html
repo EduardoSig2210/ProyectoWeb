@@ -1,80 +1,85 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodi'n Line - Registrar</title>
 
-    <link rel="icon" href="img/MotoAzulLogo.png" type="image/png">
+<head> 
 
-    <link rel="stylesheet" href="Registrar.css">
+    <meta charset="UTF-8"> <!-- Configura la codificacion de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta la pagina para pantallas pequeñas -->
+    <title>Foodi'n Line - Registrar</title> <!-- Titulo que aparece en la pestaña del navegador -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" href="img/MotoAzulLogo.png" type="image/png"> <!-- Icono pequeño de la pestaña -->
+
+    <link rel="stylesheet" href="Registrar.css"> <!-- Archivo CSS con estilos personalizados -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Fuente Poppins de Google -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"> <!-- Libreria de iconos Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- CSS de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> <!-- Scripts de Bootstrap para funcionalidades -->
 </head>
-<body>
+
+<body> <!-- Inicio del cuerpo visible de la pagina -->
 
     <!-- Contenedor principal -->
-    <main class="container d-flex justify-content-center align-items-center">
-        
-        <div class="register-box shadow-lg">
+    <main class="container d-flex justify-content-center align-items-center"> <!-- Contenedor principal centrado -->
 
-            <div class="register-header">
-                <img class="site-logo" src="img/MotoAzulLogo.png" alt="Foodi'n Line">
-                <p class="tagline">Ordena, disfruta y comparte el sabor 🍝</p>
+        <div class="register-box shadow-lg"> <!-- Caja central de registro con sombra -->
+
+            <div class="register-header"> <!-- Encabezado de la caja -->
+                <img class="site-logo" src="img/MotoAzulLogo.png" alt="Foodi'n Line"> <!-- Logo principal -->
+                <p class="tagline">Ordena, disfruta y comparte el sabor 🍝</p> <!-- Eslogan -->
             </div>
 
             <!-- Campos -->
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control" id="User-name" placeholder="Nombre" required>
+
+            <div class="input-group mb-3"> <!-- Grupo de campo con icono -->
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span> <!-- Icono de persona -->
+                <input type="text" class="form-control" id="User-name" placeholder="Nombre" required> <!-- Campo de nombre -->
             </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control" id="User-lastname" placeholder="Apellido" required>
+            <div class="input-group mb-3"> <!-- Campo apellido -->
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span> <!-- Icono -->
+                <input type="text" class="form-control" id="User-lastname" placeholder="Apellido" required> <!-- Campo apellido -->
             </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                <input type="email" class="form-control" id="User-email" placeholder="Correo electrónico" required>
+            <div class="input-group mb-3"> <!-- Campo correo -->
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span> <!-- Icono correo -->
+                <input type="email" class="form-control" id="User-email" placeholder="Correo electronico" required> <!-- Input correo -->
             </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                <input type="password" class="form-control" id="User-password" placeholder="Contraseña" required>
+            <div class="input-group mb-3"> <!-- Campo contrasena -->
+                <span class="input-group-text"><i class="bi bi-lock"></i></span> <!-- Icono candado -->
+                <input type="password" class="form-control" id="User-password" placeholder="Contrasena" required> <!-- Input contrasena -->
             </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                <input type="password" class="form-control" id="Password-confirmation" placeholder="Confirmar contraseña" required>
+            <div class="input-group mb-3"> <!-- Campo confirmar contrasena -->
+                <span class="input-group-text"><i class="bi bi-lock"></i></span> <!-- Icono candado -->
+                <input type="password" class="form-control" id="Password-confirmation" placeholder="Confirmar contrasena" required> <!-- Input confirmar -->
             </div>
 
-            <div id="passwordHelpBlock" class="form-text mb-3">
-                Tu contraseña debe tener 8-20 caracteres, contener letras y números y no incluir espacios ni caracteres especiales.
+            <div id="passwordHelpBlock" class="form-text mb-3"> <!-- Texto informativo debajo de los campos -->
+                Tu contrasena debe tener 8-20 caracteres, contener letras y numeros y no incluir espacios ni caracteres especiales.
             </div>
 
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="checkboxInitial" required>
-                <label class="form-check-label" for="checkboxInitial">
-                    <a href="Terminos.html">Acepto los términos y condiciones</a>
+            <div class="form-check mb-3"> <!-- Casilla de verificacion -->
+                <input class="form-check-input" type="checkbox" id="checkboxInitial" required> <!-- Checkbox requerido -->
+                <label class="form-check-label" for="checkboxInitial"> <!-- Texto del checkbox -->
+                    <a href="Terminos.html">Acepto los terminos y condiciones</a> <!-- Enlace hacia terminos -->
                 </label>
             </div>
 
-            <button id="btnRegistrar" class="btn btn-gradient w-100 mb-3 fw-semibold" onclick="checkPassword()">
-                <i class="bi bi-box-arrow-in-right"></i> Registrar
+            <button id="btnRegistrar" class="btn btn-gradient w-100 mb-3 fw-semibold" onclick="checkPassword()"> <!-- Boton registrar -->
+                <i class="bi bi-box-arrow-in-right"></i> Registrar <!-- Icono + texto -->
             </button>
 
-            <a href="Inicio.html" class="btn btn-gradient w-100 fw-semibold mb-3 text-decoration-none d-inline-block text-center">
-                <i class="bi bi-person-check-fill"></i> Iniciar Sesión
+            <a href="Inicio.html" class="btn btn-gradient w-100 fw-semibold mb-3 text-decoration-none d-inline-block text-center"> <!-- Boton para ir a iniciar sesion -->
+                <i class="bi bi-person-check-fill"></i> Iniciar Sesion <!-- Icono + texto -->
             </a>
 
         </div>
     </main>
 
-    <script src="../BackEnd/Login/function.js"></script>
+    <script src="../BackEnd/Login/function.js"></script> <!-- Archivo JS con funciones del login -->
+
 </body>
 </html>

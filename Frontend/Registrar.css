@@ -1,24 +1,25 @@
-:root {
-    /* 🎨 Colores principales del sitio */
-    --espresso: #5e3417;        
-    --citrine-white: #f9edd2;   
-    --temptress: #440200;       
-    --wine-berry: #5d222c;    
-    --potters-clay: #8c623b;    
+:root { /* Variables globales de colores */
+    --espresso: #5e3417;        /* Color cafe oscuro */
+    --citrine-white: #f9edd2;   /* Color crema claro */
+    --temptress: #440200;       /* Rojo muy oscuro */
+    --wine-berry: #5d222c;      /* Vino rojizo */
+    --potters-clay: #8c623b;    /* Cafe tierra */
 }
 
-/* 🌆 Fondo general con collage */
+/* Estilo general del body */
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: var(--citrine-white);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    margin: 0; /* Se elimina margen por defecto */
+    font-family: 'Poppins', sans-serif; /* Fuente del sitio */
+    color: var(--citrine-white); /* Color de texto general */
+    min-height: 100vh; /* Altura minima igual a la pantalla completa */
+    display: flex; /* Se usa flexbox */
+    justify-content: center; /* Centra horizontal */
+    align-items: center; /* Centra vertical */
+    position: relative; /* Permite pseudo-elemento encima */
 
-    background-color: var(--wine-berry);
+    background-color: var(--wine-berry); /* Color de fondo base */
+
+    /* Lista de imagenes que formaran el collage */
     background-image: 
         url("img/collage1.jpg"),
         url("img/collage2.jpg"),
@@ -30,147 +31,146 @@ body {
         url("img/collage8.jpg"),
         url("img/collage9.jpg");
 
+    /* Tamano de cada imagen del collage */
     background-size: 
         33% 33%, 33% 33%, 33% 33%,
         33% 33%, 33% 33%, 33% 33%,
         33% 33%, 33% 33%, 33% 33%;
 
+    /* Posicion de cada imagen */
     background-position: 
         top left, top center, top right,
         center left, center center, center right,
         bottom left, bottom center, bottom right;
 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-repeat: no-repeat; /* Evita repeticiones */
+    background-attachment: fixed; /* Fija el fondo */
 }
 
 body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(160deg, rgba(68,2,0,0.7) 10%, rgba(93,34,44,0.7) 50%, rgba(94,52,23,0.6) 90%);
-    z-index: 0;
+    content: ""; /* Crea capa extra */
+    position: fixed; /* Siempre visible */
+    inset: 0; /* Cubre toda la pantalla */
+    background: linear-gradient(160deg, rgba(68,2,0,0.7) 10%, rgba(93,34,44,0.7) 50%, rgba(94,52,23,0.6) 90%); /* Degradado oscuro encima */
+    z-index: 0; /* Nivel detras del contenido */
 }
 
-/* Contenedor principal */
+/* Contenedor principal del contenido */
 main.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    position: relative;
-    z-index: 1; 
+    display: flex; /* Layout vertical */
+    flex-direction: column; 
+    align-items: center; /* Centra items */
+    padding: 20px; /* Espaciado interno */
+    position: relative; /* Para manejar z-index */
+    z-index: 1;  /* Se coloca encima del filtro oscuro */
 }
 
-/*  Logo */
+/* Seccion del logo */
 .logo-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
+    display: flex; 
+    flex-direction: column; /* Logo y texto uno bajo otro */
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 30px; /* Espacio inferior */
 }
 
 .site-logo {
-    width: 200px;
-    max-width: 100%;
-    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+    width: 200px; /* Ancho del logo */
+    max-width: 100%; /* Asegura que no se salga del contenedor */
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3)); /* Sombra del logo */
 }
 
 .tagline {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-top: 10px;
+    font-size: 1.2rem; /* Tamano del texto */
+    opacity: 0.9; /* Ligera transparencia */
+    margin-top: 10px; /* Espacio superior */
 }
 
-/*  Caja del formulario */
+/* Caja del formulario */
 .register-box {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
-    padding: 40px;
-    width: 600px;
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    background: rgba(255,255,255,0.15); /* Fondo blanco transparente */
+    backdrop-filter: blur(12px); /* Efecto glassmorphism */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 40px; /* Espaciado interno */
+    width: 600px; /* Ancho fijo */
+    border: 1px solid rgba(255,255,255,0.2); /* Borde semi-transparente */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* Sombra */
 }
 
-/*  Encabezado */
+/* Encabezado de la caja */
 .register-header {
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: center; /* Centra texto */
+    margin-bottom: 30px; /* Espacio inferior */
 }
 
 .register-header img.site-logo {
-    width: 200px;
-    margin-bottom: 30px;
+    width: 200px; /* Ancho del logo dentro del header */
+    margin-bottom: 30px; /* Espacio inferior */
 }
 
 .register-header h2 {
-    color: var(--citrine-white);
-    font-weight: 700;
-    text-align: center;
+    color: var(--citrine-white); /* Color del titulo */
+    font-weight: 700; /* Negrita */
+    text-align: center; /* Centrado */
 }
 
 .register-header p {
-    color: rgba(255,255,255,0.8);
-    font-size: 0.95rem;
-    text-align: center;
+    color: rgba(255,255,255,0.8); /* Texto semi-transparente */
+    font-size: 0.95rem; /* Tamano */
+    text-align: center; /* Centrado */
 }
 
-/*  Campos del formulario */
+/* Grupo del input (iconos + caja de texto) */
 .input-group-text {
-    background-color: var(--wine-berry);
-    color: var(--citrine-white);
-    border: none;
-    border-radius: 10px 0 0 10px;
+    background-color: var(--wine-berry); /* Color del icono */
+    color: var(--citrine-white); /* Color del icono */
+    border: none; /* Sin borde */
+    border-radius: 10px 0 0 10px; /* Bordes redondeados del lado izquierdo */
 }
 
 .input-group .form-control {
-    width: calc(100% - 50px);
-    border: none;
-    border-radius: 0 10px 10px 0;
-    padding: 10px;
+    width: calc(100% - 50px); /* Ajuste para icono + input */
+    border: none; /* Sin borde */
+    border-radius: 0 10px 10px 0; /* Bordes del lado derecho */
+    padding: 10px; /* Espaciado interno */
 }
 
 .form-control:focus {
-    box-shadow: 0 0 8px rgba(255,255,255,0.5);
+    box-shadow: 0 0 8px rgba(255,255,255,0.5); /* Brillo al enfocar */
 }
 
-/*  Botones con degradado */
+/* Boton con efecto degradado */
 .btn-gradient {
-    background: linear-gradient(90deg, #a33b50, #995e05);
-    border: 2px solid #fff;
-    border-radius: 15px;
-    color: #fff;
-    padding: 12px;
-    font-weight: 600;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px auto;
+    background: linear-gradient(90deg, #a33b50, #995e05); /* Degradado */
+    border: 2px solid #fff; /* Borde blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    color: #fff; /* Texto blanco */
+    padding: 12px; /* Espaciado */
+    font-weight: 600; /* Negrita */
+    width: 250px; /* Ancho */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animacion en hover */
+    text-align: center; /* Centrado */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; 
+    margin: 10px auto; /* Centrado */
 }
 
 .btn-gradient:hover, .btn-gradient:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(255,255,255,0.4);
-    color: #fff;
+    transform: translateY(-2px); /* Se levanta un poco */
+    box-shadow: 0 6px 15px rgba(255,255,255,0.4); /* Sombra mas fuerte */
+    color: #fff; /* Mantiene color */
 }
 
-/*  Pantallas pequeñas */
+/* Ajustes para pantallas pequenas */
 @media (max-width: 992px) {
     .register-box {
-        width: 90%;
-        padding: 30px;
+        width: 90%; /* Se reduce el ancho para celulares */
+        padding: 30px; /* Se ajusta padding */
     }
-    .site-logo { width: 120px; }
-    .tagline { font-size: 1.1rem; }
+    .site-logo { width: 120px; } /* Logo mas pequeno */
+    .tagline { font-size: 1.1rem; } /* Texto un poco mas chico */
 }
 
 .term-box {
-    width: 550px;
+    width: 550px; /* Ancho para caja de terminos */
 }
-
-
-
