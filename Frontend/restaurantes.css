@@ -95,6 +95,7 @@ body {
   position: relative;
   margin-left: 20px;
   cursor: pointer;
+
 }
 
 .action-item i {
@@ -122,14 +123,16 @@ body {
   animation: fadeDown 0.25s ease;
 }
 
-.dropdown-menu p {
+.dropdown-menu a {
   margin: 8px 0;
   font-size: 0.9rem;
   cursor: pointer;
   transition: 0.3s;
+  color: #440200;
+  text-decoration: none;
 }
 
-.dropdown-menu p:hover {
+.dropdown-menu a:hover {
   color: var(--wine-berry);
   transform: translateX(4px);
 }
