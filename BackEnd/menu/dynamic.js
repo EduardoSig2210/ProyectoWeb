@@ -1,12 +1,10 @@
 const restaurantData = JSON.parse(localStorage.getItem("restaurantData"));
 
-//url para obtener el restaurantes
+// URLs para las APIs
 const url1 = "http://localhost:3000/api/restaurant/";
-
-//url para obtener el menu
 let url2 = "http://localhost:3000/api/menu/";
 
-//Caja de items a cambiar en el menu
+// Elementos del DOM que se van a actualizar
 var itemName1 = document.getElementById("itemName1");
 var itemName2 = document.getElementById("itemName2");
 var itemName3 = document.getElementById("itemName3");
@@ -19,11 +17,12 @@ var itemPrice1 = document.getElementById("itemPrice1");
 var itemPrice2 = document.getElementById("itemPrice2");
 var itemPrice3 = document.getElementById("itemPrice3");
 
-
+// Funcion principal que obtiene y muestra los datos del menu
 const putDataMenu = async () => {
     try {
     const restaurantData = JSON.parse(localStorage.getItem("restaurantData"));
     
+    // Verificar si hay datos del restaurante
     if (!restaurantData) {
       console.log("No hay datos del restaurante");
       return;
@@ -35,22 +34,22 @@ const putDataMenu = async () => {
     const response1 = await fetch(`http://localhost:3000/api/restaurant/${restaurantData.name}`);
     const restaurantInfo = await response1.json();
     
-    // si no encuentra datos
+    // Verificar si se encontro el restaurante
     if (restaurantInfo.length === 0) {
       console.error("Restaurante no encontrado:", restaurantData.name);
       return;
     }
     
-    const restaurantId = restaurantInfo[0].idRestaurant; // ← [0] porque es array
+    const restaurantId = restaurantInfo[0].idRestaurant;
     console.log("ID del restaurante:", restaurantId);
 
-    // 2. Obtener menú con el ID
+    // Obtener el menu del restaurante
     const response2 = await fetch(`http://localhost:3000/api/menu/${restaurantId}`);
     const items = await response2.json();
 
-    console.log("Items del menú:", items);
+    console.log("Items del menu:", items);
 
-    // 3. Actualizar HTML
+    // Actualizar los elementos del DOM con los datos del menu
     if (items[0]) {
       itemName1.textContent = items[0].item;
       var item = itemName1.textContent;
@@ -77,6 +76,7 @@ const putDataMenu = async () => {
   }
 };
 
+// Funcion para aumentar la cantidad de un item
 function increasing(index){
     var total = document.getElementById("qty" + index);
     let quantity = parseInt(total.textContent) || 0;
@@ -85,6 +85,7 @@ function increasing(index){
     subtotal(index);
 }
 
+// Funcion para disminuir la cantidad de un item
 function decreasing(index){
     var total = document.getElementById("qty" + index);
     let quantity = parseInt(total.textContent) || 0;
@@ -95,12 +96,13 @@ function decreasing(index){
     subtotal(index);
 }
 
+// Funcion para calcular el subtotal de un item
 function subtotal(index){
     const qtyElement = document.getElementById("qty" + index);
     const priceElement = document.getElementById("itemPrice" + index);
     const subtotalElement = document.getElementById("subtotal" + index);
     
-    // Obtener valores
+    // Obtener valores numericos
     const quantity = parseInt(qtyElement.textContent) || 0;
     const priceText = priceElement.textContent.replace('$ ', '');
     const price = parseFloat(priceText) || 0;
@@ -111,12 +113,13 @@ function subtotal(index){
     total();
 }
 
+// Funcion para calcular el total general de todos los items
 function total() {
     var price = document.getElementById("price");
     
     let total = 0;
     
-    // Sumar los 3 subtotales
+    // Sumar los subtotales de los 3 items
     for (let i = 1; i <= 3; i++) {
         const subtotalElement = document.getElementById("subtotal" + i);
         const subtotalText = subtotalElement.textContent;
@@ -128,6 +131,7 @@ function total() {
     console.log("💰 Total del pedido: $" + total.toFixed(2));
 }
 
+// Funcion para asignar la imagen correspondiente a cada item
 function putImg(name, index){
   var imgElement = document.getElementById("img" + index);
     if (imgElement) {
@@ -136,7 +140,9 @@ function putImg(name, index){
     }
 }
 
+// Hacer las funciones disponibles globalmente
 window.increasing = increasing;
 window.decreasing = decreasing;
-// inicia cuando la pagina cargue
+
+// Ejecutar la funcion cuando la pagina termine de cargar
 document.addEventListener('DOMContentLoaded', putDataMenu);
