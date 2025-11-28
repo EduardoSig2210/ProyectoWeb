@@ -5,32 +5,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foodi'n Line - Mi Perfil</title>
+
+    <!-- Icono que aparece en la pestaña del navegador -->
     <link rel="icon" href="img/MotoAzulLogo.png" type="image/png" />
 
-    <!-- Google Fonts -->
+    <!-- Fuente Poppins desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap -->
+    <!-- CSS de Bootstrap 5 para estilos y componentes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Iconos -->
+    <!-- Iconos de Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 
-    <!-- CSS personalizado -->
+    <!-- Archivo CSS personalizado para la pAgina de perfil -->
     <link rel="stylesheet" href="perfil.css" />
 
+    <!-- LibrerIa SweetAlert2 (para alertas personalizadas si se usan en JS) -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <!-- Encabezado principal -->
+  
     <header class="navbar">
         <div class="container d-flex justify-content-between align-items-center">
+            
+            <!-- LOGO PRINCIPAL DEL SITIO -->
             <div class="logo-section d-flex align-items-center">
                 <img src="img/Logo_Header_Letras_Blancas.png" alt="Logo Foodi'n Line" class="logo" />
             </div>
 
+            <!-- SECCION DE ICONOS DE USUARIO (NOTIFICACIONES Y PERFIL) -->
             <div class="user-actions d-flex align-items-center">
+
+                <!-- Icono de notificaciones con menú desplegable -->
                 <div class="action-item">
                     <i class="bi bi-bell-fill"></i>
                     <div class="dropdown-menu">
@@ -38,8 +46,11 @@
                     </div>
                 </div>
 
+                <!-- Icono del perfil con opciones -->
                 <div class="action-item">
                     <i class="bi bi-person-circle"></i>
+
+                    <!-- u que aparece al hacer hover o click -->
                     <div class="dropdown-menu">
                         <a href="perfil.html" class="text-decoration-none">Mi Perfil</a>
                         <br>
@@ -52,54 +63,70 @@
         </div>
     </header>
 
-    <!--Perfil -->
     <main class="container mt-5">
         <div class="profile-container">
             <div class="row">
-                <!--Foto de Perfil-->
+                
                 <div class="col-md-4 text-center">
                     <div class="profile-photo-section">
+                        
+                        <!-- Foto o ícono del usuario -->
                         <div class="profile-photo">
                             <i class="bi bi-person-circle"></i>
                         </div>
+
+                        <!-- Nombre completo cargado dinamicamente con JS -->
                         <h3 class="mt-3" id="profile-fullname">Cargando...</h3>
+
+                        <!-- Correo pequeño debajo del nombre -->
                         <p class="text-muted" id="profile-email-small">correo@ejemplo.com</p>
                     </div>
                 </div>
 
-                <!--Datos del Usuario -->
+            
                 <div class="col-md-8">
                     <div class="profile-info-section">
+
+                        <!-- Titulo de la sección -->
                         <h2 class="section-title">Información Personal</h2>
                         
+                        <!-- Tarjeta que contiene los datos del usuario -->
                         <div class="info-card">
+
+                            <!-- Nombre -->
                             <div class="info-item">
                                 <label><i class="bi bi-person-fill"></i> Nombre</label>
                                 <p id="profile-name">Cargando...</p>
                             </div>
 
+                            <!-- Apellido -->
                             <div class="info-item">
                                 <label><i class="bi bi-person-fill"></i> Apellido</label>
                                 <p id="profile-lastname">Cargando...</p>
                             </div>
 
+                            <!-- Correo -->
                             <div class="info-item">
                                 <label><i class="bi bi-envelope-fill"></i> Correo Electrónico</label>
                                 <p id="profile-email">correo@ejemplo.com</p>
                             </div>
 
+                            <!-- Fecha de registro -->
                             <div class="info-item">
                                 <label><i class="bi bi-calendar-fill"></i> Miembro desde</label>
                                 <p id="profile-date">Enero 2025</p>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
 
+    <!-- Importa las funciones de JavaScript para cargar los datos del perfil -->
     <script src="../BackEnd/datosPerfil/PerfilFunctions.js"></script>
-</body>
 
+</body>
 </html>

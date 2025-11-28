@@ -170,7 +170,7 @@ async function login() {
       timer: 3000,
       timerProgressBar: true
     }).then(() => {
-      window.location.href = "inicio.html";
+      window.location.href = "restaurantes.html";
     });
     console.log("Login exitoso!");
 

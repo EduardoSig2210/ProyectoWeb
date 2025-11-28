@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Foodi’n Line - Restaurantes</title>
+
+  <!-- Icono pequeño que aparece en la pestaña -->
   <link rel="icon" href="img/MotoAzulLogo.png" type="image/png">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: fuente Poppins en varios grosores -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap -->
+  <!-- Hoja de estilos de Bootstrap  -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Iconos -->
+  <!-- Iconos Bootstrap  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <!-- CSS personalizado -->
+  <!-- Tu hoja de estilos personalizada -->
   <link rel="stylesheet" href="prototipo.css">
 </head>
 
@@ -23,85 +26,114 @@
 
 <header class="navbar">
   <div class="container d-flex justify-content-between align-items-center">
+
+    <!-- Logo principal del encabezado -->
     <img src="img/Logo_Header_Letras_Blancas.png" class="logo">
 
+    <!-- Barra de búsqueda -->
     <div class="search-bar">
       <input type="text" placeholder="Buscar">
       <button><i class="bi bi-search"></i></button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- Contenedor principal -->
-  <div class="main">
-    <!-- Menu lateral -->
-    <aside class="Menu_lateral">
-    </aside>
+<!--CONTENEDOR PRINCIPAL -->
+<div class="main">
 
-    <!-- Contenido -->
-    <div class="content-area">
+  <!-- Menú lateral vacío (se llenara después si se desea) -->
+  <aside class="Menu_lateral"></aside>
 
-      <!-- Menu -->
-      <!--Lo que esta es un ejemplo del menu de un local-->
-      <section class="menu">
-        <div class="menu-grid">
-          <!-- Tarjeta Papa John's -->
-          <div class="menu-card">
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item"><img alt="imagen1" id="img1"></li>
-              <li class="list-group-item" id="itemName1">The works</li>
-              <li class="list-group-item" id="itemPrice1">$ 15.99</li>
-              <li class="list-group-item">
-                <div class="qty-container">
-                  <button class="qty-btn" id="minus" onclick="decreasing(1)">-</button>
-                  <span id="qty1">0</span>
-                  <button class="qty-btn" id="plus" onclick="increasing(1)">+</button>
-                </div>
-              </li>
-              <li class="list-group-item" id="subtotal1">subtotal: $ </li>
-            </ul>
+  <!-- Zona donde va el contenido principal -->
+  <div class="content-area">
 
+    <!-- SECCION DEL MENU DE PRODUCTOS-->
+    <section class="menu">
+      <div class="menu-grid">
 
-          </div>
-          <div class="menu-card">
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item"><img alt="imagen2" id="img2"></li>
-              <li class="list-group-item" id="itemName2">Alfredo Delight</li>
-              <li class="list-group-item"id="itemPrice2">$ 15.99</li>
-              <li class="list-group-item">
-                <div class="qty-container">
-                  <button class="qty-btn" id="minus" onclick="decreasing(2)">-</button>
-                  <span id="qty2">0</span>
-                  <button class="qty-btn" id="plus" onclick="increasing(2)">+</button>
-                </div>
-              </li>
-              <li class="list-group-item" id="subtotal2">subtotal: $ </li>
-            </ul>
-          </div>
-          <div class="menu-card">
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item"><img alt="imagen3" id="img3"></li>
-              <li class="list-group-item"id="itemName3">Carnivora</li>
-              <li class="list-group-item" id="itemPrice3">$ 15.99</li>
-              <li class="list-group-item">
-                <div class="qty-container">
-                  <button class="qty-btn" id="minus" onclick="decreasing(3)">-</button>
-                  <span id="qty3">0</span>
-                  <button class="qty-btn" id="plus" onclick="increasing(3)">+</button>
-                </div>
-              </li>
-              <li class="list-group-item" id="subtotal3">subtotal: $ </li>
-            </ul>
-          </div>
-          <div class="order-summary">
-            <h5>Resumen del Pedido</h5>
-            <p>Total: $ <span id="price">0.00</span></p>
-          </div>
+        <div class="menu-card">
+          <ul class="list-group list-group-horizontal">
+
+            <!-- Imagen del producto -->
+            <li class="list-group-item"><img alt="imagen1" id="img1"></li>
+
+            <!-- Nombre del item -->
+            <li class="list-group-item" id="itemName1">The works</li>
+
+            <!-- Precio -->
+            <li class="list-group-item" id="itemPrice1">$ 15.99</li>
+
+            <!-- Controles para sumar,restar cantidad -->
+            <li class="list-group-item">
+              <div class="qty-container">
+                <!-- Boton para disminuir cantidad -->
+                <button class="qty-btn" id="minus" onclick="decreasing(1)">-</button>
+
+                <!-- Cantidad actual -->
+                <span id="qty1">0</span>
+
+                <!-- Boton para aumentar cantidad -->
+                <button class="qty-btn" id="plus" onclick="increasing(1)">+</button>
+              </div>
+            </li>
+
+            <!-- Subtotal del item -->
+            <li class="list-group-item" id="subtotal1">subtotal: $ </li>
+          </ul>
         </div>
-      </section>
-    </div>
+
+      
+        <div class="menu-card">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><img alt="imagen2" id="img2"></li>
+            <li class="list-group-item" id="itemName2">Alfredo Delight</li>
+            <li class="list-group-item" id="itemPrice2">$ 15.99</li>
+
+            <li class="list-group-item">
+              <div class="qty-container">
+                <button class="qty-btn" id="minus" onclick="decreasing(2)">-</button>
+                <span id="qty2">0</span>
+                <button class="qty-btn" id="plus" onclick="increasing(2)">+</button>
+              </div>
+            </li>
+
+            <li class="list-group-item" id="subtotal2">subtotal: $ </li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><img alt="imagen3" id="img3"></li>
+            <li class="list-group-item" id="itemName3">Carnivora</li>
+            <li class="list-group-item" id="itemPrice3">$ 15.99</li>
+
+            <li class="list-group-item">
+              <div class="qty-container">
+                <button class="qty-btn" id="minus" onclick="decreasing(3)">-</button>
+                <span id="qty3">0</span>
+                <button class="qty-btn" id="plus" onclick="increasing(3)">+</button>
+              </div>
+            </li>
+
+            <li class="list-group-item" id="subtotal3">subtotal: $ </li>
+          </ul>
+        </div>
+
+        <div class="order-summary">
+          <h5>Resumen del Pedido</h5>
+
+          <!-- Precio total calculado desde JavaScript -->
+          <p>Total: $ <span id="price">0.00</span></p>
+        </div>
+
+      </div>
     </section>
-  </div>
-  </div>
-  <script type="module" src="../BackEnd/menu/dynamic.js"></script>
+
+  </div> <!-- content-area -->
+</div> <!-- main -->
+
+<!-- Script que carga los datos dinámicamente desde el backend -->
+<script type="module" src="../BackEnd/menu/dynamic.js"></script>
+
 </body>
 </html>
